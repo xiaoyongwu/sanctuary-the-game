@@ -15,6 +15,7 @@
 		3655CF6D1B0F6563000BA0F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3655CF6C1B0F6563000BA0F1 /* Images.xcassets */; };
 		3655CF701B0F6563000BA0F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3655CF6E1B0F6563000BA0F1 /* LaunchScreen.xib */; };
 		3655CF7C1B0F6563000BA0F1 /* SanctuaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655CF7B1B0F6563000BA0F1 /* SanctuaryTests.swift */; };
+		3655CF861B0F8199000BA0F1 /* Gamepad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655CF851B0F8199000BA0F1 /* Gamepad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		3655CF751B0F6563000BA0F1 /* SanctuaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SanctuaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3655CF7A1B0F6563000BA0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3655CF7B1B0F6563000BA0F1 /* SanctuaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanctuaryTests.swift; sourceTree = "<group>"; };
+		3655CF851B0F8199000BA0F1 /* Gamepad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gamepad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				3655CF6C1B0F6563000BA0F1 /* Images.xcassets */,
 				3655CF6E1B0F6563000BA0F1 /* LaunchScreen.xib */,
 				3655CF5F1B0F6563000BA0F1 /* Supporting Files */,
+				3655CF851B0F8199000BA0F1 /* Gamepad.swift */,
 			);
 			path = Sanctuary;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				3655CF661B0F6563000BA0F1 /* GameScene.swift in Sources */,
 				3655CF681B0F6563000BA0F1 /* GameViewController.swift in Sources */,
 				3655CF621B0F6563000BA0F1 /* AppDelegate.swift in Sources */,
+				3655CF861B0F8199000BA0F1 /* Gamepad.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +357,7 @@
 				INFOPLIST_FILE = Sanctuary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -363,6 +368,7 @@
 				INFOPLIST_FILE = Sanctuary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

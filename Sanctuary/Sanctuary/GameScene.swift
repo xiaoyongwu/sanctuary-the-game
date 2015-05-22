@@ -9,18 +9,32 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    var lastMenuPosition = 0
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        let world = SKSpriteNode(imageNamed: "light_world")
+        world.xScale = 1
+        world.yScale = 1
+        world.position = CGPoint(x: -255, y: -255)
+        //self.addChild(world)
+        
+        let gamepad = Gamepad(scene: self)
+        gamepad.draw("default")
+        
+        
+        /*
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
         myLabel.text = "Hello, World!";
         myLabel.fontSize = 65;
         myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
         
         self.addChild(myLabel)
+        */
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        /* Called when a touch begins */
+        /* Called when a touch begins
         
         for touch in (touches as! Set<UITouch>) {
             let location = touch.locationInNode(self)
@@ -37,6 +51,7 @@ class GameScene: SKScene {
             
             self.addChild(sprite)
         }
+        */
     }
    
     override func update(currentTime: CFTimeInterval) {
