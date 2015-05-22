@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Sanctuary
 //
-//  Created by uriel bertoche on 5/21/15.
+//  Created by uriel bertoche on 5/22/15.
 //  Copyright (c) 2015 bertoche. All rights reserved.
 //
 
