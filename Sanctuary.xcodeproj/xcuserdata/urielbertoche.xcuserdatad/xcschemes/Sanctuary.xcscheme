@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "368C8A721B0D87050061A6A8"
+               BlueprintIdentifier = "3655CF5B1B0F6563000BA0F1"
                BuildableName = "Sanctuary.app"
                BlueprintName = "Sanctuary"
                ReferencedContainer = "container:Sanctuary.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "368C8A891B0D87060061A6A8"
+               BlueprintIdentifier = "3655CF741B0F6563000BA0F1"
                BuildableName = "SanctuaryTests.xctest"
                BlueprintName = "SanctuaryTests"
                ReferencedContainer = "container:Sanctuary.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "368C8A891B0D87060061A6A8"
+               BlueprintIdentifier = "3655CF741B0F6563000BA0F1"
                BuildableName = "SanctuaryTests.xctest"
                BlueprintName = "SanctuaryTests"
                ReferencedContainer = "container:Sanctuary.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "368C8A721B0D87050061A6A8"
+            BlueprintIdentifier = "3655CF5B1B0F6563000BA0F1"
             BuildableName = "Sanctuary.app"
             BlueprintName = "Sanctuary"
             ReferencedContainer = "container:Sanctuary.xcodeproj">
@@ -76,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "368C8A721B0D87050061A6A8"
+            BlueprintIdentifier = "3655CF5B1B0F6563000BA0F1"
             BuildableName = "Sanctuary.app"
             BlueprintName = "Sanctuary"
             ReferencedContainer = "container:Sanctuary.xcodeproj">
@@ -95,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "368C8A721B0D87050061A6A8"
+            BlueprintIdentifier = "3655CF5B1B0F6563000BA0F1"
             BuildableName = "Sanctuary.app"
             BlueprintName = "Sanctuary"
             ReferencedContainer = "container:Sanctuary.xcodeproj">

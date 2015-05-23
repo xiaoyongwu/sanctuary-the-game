@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>2EBF3EBE-AC3C-4705-8381-4D10DD7145D7</string>
+	<string>51AF35EF-24C1-4F4A-A7C3-91AAFB73641A</string>
 	<key>IDESourceControlProjectName</key>
 	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/urielb/sanctuary-the-game.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Sanctuary.xcodeproj/project.xcworkspace</string>
+	<string>Sanctuary/Sanctuary.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D63046A9866516875327F9B4F2003DF2AE694BD3</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/urielb/sanctuary-the-game.git</string>

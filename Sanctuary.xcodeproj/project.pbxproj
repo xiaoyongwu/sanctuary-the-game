@@ -6,30 +6,53 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3655CF621B0F6563000BA0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655CF611B0F6563000BA0F1 /* AppDelegate.swift */; };
+		3655CF641B0F6563000BA0F1 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3655CF631B0F6563000BA0F1 /* GameScene.sks */; };
+		3655CF661B0F6563000BA0F1 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655CF651B0F6563000BA0F1 /* GameScene.swift */; };
+		3655CF681B0F6563000BA0F1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655CF671B0F6563000BA0F1 /* GameViewController.swift */; };
+		3655CF6B1B0F6563000BA0F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3655CF691B0F6563000BA0F1 /* Main.storyboard */; };
+		3655CF6D1B0F6563000BA0F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3655CF6C1B0F6563000BA0F1 /* Images.xcassets */; };
+		3655CF701B0F6563000BA0F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3655CF6E1B0F6563000BA0F1 /* LaunchScreen.xib */; };
+		3655CF7C1B0F6563000BA0F1 /* SanctuaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655CF7B1B0F6563000BA0F1 /* SanctuaryTests.swift */; };
+		3655CF861B0F8199000BA0F1 /* Gamepad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655CF851B0F8199000BA0F1 /* Gamepad.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
-		368C8A8B1B0D87060061A6A8 /* PBXContainerItemProxy */ = {
+		3655CF761B0F6563000BA0F1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 368C8A6B1B0D87050061A6A8 /* Project object */;
+			containerPortal = 3655CF541B0F6563000BA0F1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 368C8A721B0D87050061A6A8;
+			remoteGlobalIDString = 3655CF5B1B0F6563000BA0F1;
 			remoteInfo = Sanctuary;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		368C8A731B0D87050061A6A8 /* Sanctuary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Sanctuary.app; path = "/Users/urielbertoche/Projects/Sanctuary/build/Debug-iphoneos/Sanctuary.app"; sourceTree = "<absolute>"; };
-		368C8A8A1B0D87060061A6A8 /* SanctuaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SanctuaryTests.xctest; path = "/Users/urielbertoche/Projects/Sanctuary/build/Debug-iphoneos/SanctuaryTests.xctest"; sourceTree = "<absolute>"; };
+		3655CF5C1B0F6563000BA0F1 /* Sanctuary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sanctuary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3655CF601B0F6563000BA0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3655CF611B0F6563000BA0F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3655CF631B0F6563000BA0F1 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		3655CF651B0F6563000BA0F1 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		3655CF671B0F6563000BA0F1 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		3655CF6A1B0F6563000BA0F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3655CF6C1B0F6563000BA0F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3655CF6F1B0F6563000BA0F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3655CF751B0F6563000BA0F1 /* SanctuaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SanctuaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3655CF7A1B0F6563000BA0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3655CF7B1B0F6563000BA0F1 /* SanctuaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanctuaryTests.swift; sourceTree = "<group>"; };
+		3655CF851B0F8199000BA0F1 /* Gamepad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gamepad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		368C8A701B0D87050061A6A8 /* Frameworks */ = {
+		3655CF591B0F6563000BA0F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		368C8A871B0D87060061A6A8 /* Frameworks */ = {
+		3655CF721B0F6563000BA0F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,22 +62,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		368C8A6A1B0D87050061A6A8 = {
+		3655CF531B0F6563000BA0F1 = {
 			isa = PBXGroup;
 			children = (
+				3655CF5E1B0F6563000BA0F1 /* Sanctuary */,
+				3655CF781B0F6563000BA0F1 /* SanctuaryTests */,
+				3655CF5D1B0F6563000BA0F1 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		3655CF5D1B0F6563000BA0F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3655CF5C1B0F6563000BA0F1 /* Sanctuary.app */,
+				3655CF751B0F6563000BA0F1 /* SanctuaryTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3655CF5E1B0F6563000BA0F1 /* Sanctuary */ = {
+			isa = PBXGroup;
+			children = (
+				3655CF611B0F6563000BA0F1 /* AppDelegate.swift */,
+				3655CF631B0F6563000BA0F1 /* GameScene.sks */,
+				3655CF651B0F6563000BA0F1 /* GameScene.swift */,
+				3655CF671B0F6563000BA0F1 /* GameViewController.swift */,
+				3655CF691B0F6563000BA0F1 /* Main.storyboard */,
+				3655CF6C1B0F6563000BA0F1 /* Images.xcassets */,
+				3655CF6E1B0F6563000BA0F1 /* LaunchScreen.xib */,
+				3655CF5F1B0F6563000BA0F1 /* Supporting Files */,
+				3655CF851B0F8199000BA0F1 /* Gamepad.swift */,
+			);
+			path = Sanctuary;
+			sourceTree = "<group>";
+		};
+		3655CF5F1B0F6563000BA0F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3655CF601B0F6563000BA0F1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3655CF781B0F6563000BA0F1 /* SanctuaryTests */ = {
+			isa = PBXGroup;
+			children = (
+				3655CF7B1B0F6563000BA0F1 /* SanctuaryTests.swift */,
+				3655CF791B0F6563000BA0F1 /* Supporting Files */,
+			);
+			path = SanctuaryTests;
+			sourceTree = "<group>";
+		};
+		3655CF791B0F6563000BA0F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3655CF7A1B0F6563000BA0F1 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		368C8A721B0D87050061A6A8 /* Sanctuary */ = {
+		3655CF5B1B0F6563000BA0F1 /* Sanctuary */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 368C8A941B0D87060061A6A8 /* Build configuration list for PBXNativeTarget "Sanctuary" */;
+			buildConfigurationList = 3655CF7F1B0F6563000BA0F1 /* Build configuration list for PBXNativeTarget "Sanctuary" */;
 			buildPhases = (
-				368C8A6F1B0D87050061A6A8 /* Sources */,
-				368C8A701B0D87050061A6A8 /* Frameworks */,
-				368C8A711B0D87050061A6A8 /* Resources */,
+				3655CF581B0F6563000BA0F1 /* Sources */,
+				3655CF591B0F6563000BA0F1 /* Frameworks */,
+				3655CF5A1B0F6563000BA0F1 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -62,46 +138,46 @@
 			);
 			name = Sanctuary;
 			productName = Sanctuary;
-			productReference = 368C8A731B0D87050061A6A8 /* Sanctuary.app */;
+			productReference = 3655CF5C1B0F6563000BA0F1 /* Sanctuary.app */;
 			productType = "com.apple.product-type.application";
 		};
-		368C8A891B0D87060061A6A8 /* SanctuaryTests */ = {
+		3655CF741B0F6563000BA0F1 /* SanctuaryTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 368C8A971B0D87060061A6A8 /* Build configuration list for PBXNativeTarget "SanctuaryTests" */;
+			buildConfigurationList = 3655CF821B0F6563000BA0F1 /* Build configuration list for PBXNativeTarget "SanctuaryTests" */;
 			buildPhases = (
-				368C8A861B0D87060061A6A8 /* Sources */,
-				368C8A871B0D87060061A6A8 /* Frameworks */,
-				368C8A881B0D87060061A6A8 /* Resources */,
+				3655CF711B0F6563000BA0F1 /* Sources */,
+				3655CF721B0F6563000BA0F1 /* Frameworks */,
+				3655CF731B0F6563000BA0F1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				368C8A8C1B0D87060061A6A8 /* PBXTargetDependency */,
+				3655CF771B0F6563000BA0F1 /* PBXTargetDependency */,
 			);
 			name = SanctuaryTests;
 			productName = SanctuaryTests;
-			productReference = 368C8A8A1B0D87060061A6A8 /* SanctuaryTests.xctest */;
+			productReference = 3655CF751B0F6563000BA0F1 /* SanctuaryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		368C8A6B1B0D87050061A6A8 /* Project object */ = {
+		3655CF541B0F6563000BA0F1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = bertoche;
 				TargetAttributes = {
-					368C8A721B0D87050061A6A8 = {
+					3655CF5B1B0F6563000BA0F1 = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
-					368C8A891B0D87060061A6A8 = {
+					3655CF741B0F6563000BA0F1 = {
 						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = 368C8A721B0D87050061A6A8;
+						TestTargetID = 3655CF5B1B0F6563000BA0F1;
 					};
 				};
 			};
-			buildConfigurationList = 368C8A6E1B0D87050061A6A8 /* Build configuration list for PBXProject "Sanctuary" */;
+			buildConfigurationList = 3655CF571B0F6563000BA0F1 /* Build configuration list for PBXProject "Sanctuary" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -109,26 +185,30 @@
 				en,
 				Base,
 			);
-			mainGroup = 368C8A6A1B0D87050061A6A8;
-			productRefGroup = 368C8A6A1B0D87050061A6A8;
+			mainGroup = 3655CF531B0F6563000BA0F1;
+			productRefGroup = 3655CF5D1B0F6563000BA0F1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				368C8A721B0D87050061A6A8 /* Sanctuary */,
-				368C8A891B0D87060061A6A8 /* SanctuaryTests */,
+				3655CF5B1B0F6563000BA0F1 /* Sanctuary */,
+				3655CF741B0F6563000BA0F1 /* SanctuaryTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		368C8A711B0D87050061A6A8 /* Resources */ = {
+		3655CF5A1B0F6563000BA0F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3655CF701B0F6563000BA0F1 /* LaunchScreen.xib in Resources */,
+				3655CF6D1B0F6563000BA0F1 /* Images.xcassets in Resources */,
+				3655CF641B0F6563000BA0F1 /* GameScene.sks in Resources */,
+				3655CF6B1B0F6563000BA0F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		368C8A881B0D87060061A6A8 /* Resources */ = {
+		3655CF731B0F6563000BA0F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,32 +218,56 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		368C8A6F1B0D87050061A6A8 /* Sources */ = {
+		3655CF581B0F6563000BA0F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3655CF661B0F6563000BA0F1 /* GameScene.swift in Sources */,
+				3655CF681B0F6563000BA0F1 /* GameViewController.swift in Sources */,
+				3655CF621B0F6563000BA0F1 /* AppDelegate.swift in Sources */,
+				3655CF861B0F8199000BA0F1 /* Gamepad.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		368C8A861B0D87060061A6A8 /* Sources */ = {
+		3655CF711B0F6563000BA0F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3655CF7C1B0F6563000BA0F1 /* SanctuaryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		368C8A8C1B0D87060061A6A8 /* PBXTargetDependency */ = {
+		3655CF771B0F6563000BA0F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 368C8A721B0D87050061A6A8 /* Sanctuary */;
-			targetProxy = 368C8A8B1B0D87060061A6A8 /* PBXContainerItemProxy */;
+			target = 3655CF5B1B0F6563000BA0F1 /* Sanctuary */;
+			targetProxy = 3655CF761B0F6563000BA0F1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		3655CF691B0F6563000BA0F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3655CF6A1B0F6563000BA0F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3655CF6E1B0F6563000BA0F1 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3655CF6F1B0F6563000BA0F1 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		368C8A921B0D87060061A6A8 /* Debug */ = {
+		3655CF7D1B0F6563000BA0F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -208,7 +312,7 @@
 			};
 			name = Debug;
 		};
-		368C8A931B0D87060061A6A8 /* Release */ = {
+		3655CF7E1B0F6563000BA0F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -246,27 +350,29 @@
 			};
 			name = Release;
 		};
-		368C8A951B0D87060061A6A8 /* Debug */ = {
+		3655CF801B0F6563000BA0F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Sanctuary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		368C8A961B0D87060061A6A8 /* Release */ = {
+		3655CF811B0F6563000BA0F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Sanctuary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
-		368C8A981B0D87060061A6A8 /* Debug */ = {
+		3655CF831B0F6563000BA0F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -285,7 +391,7 @@
 			};
 			name = Debug;
 		};
-		368C8A991B0D87060061A6A8 /* Release */ = {
+		3655CF841B0F6563000BA0F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -303,34 +409,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		368C8A6E1B0D87050061A6A8 /* Build configuration list for PBXProject "Sanctuary" */ = {
+		3655CF571B0F6563000BA0F1 /* Build configuration list for PBXProject "Sanctuary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				368C8A921B0D87060061A6A8 /* Debug */,
-				368C8A931B0D87060061A6A8 /* Release */,
+				3655CF7D1B0F6563000BA0F1 /* Debug */,
+				3655CF7E1B0F6563000BA0F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		368C8A941B0D87060061A6A8 /* Build configuration list for PBXNativeTarget "Sanctuary" */ = {
+		3655CF7F1B0F6563000BA0F1 /* Build configuration list for PBXNativeTarget "Sanctuary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				368C8A951B0D87060061A6A8 /* Debug */,
-				368C8A961B0D87060061A6A8 /* Release */,
+				3655CF801B0F6563000BA0F1 /* Debug */,
+				3655CF811B0F6563000BA0F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		368C8A971B0D87060061A6A8 /* Build configuration list for PBXNativeTarget "SanctuaryTests" */ = {
+		3655CF821B0F6563000BA0F1 /* Build configuration list for PBXNativeTarget "SanctuaryTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				368C8A981B0D87060061A6A8 /* Debug */,
-				368C8A991B0D87060061A6A8 /* Release */,
+				3655CF831B0F6563000BA0F1 /* Debug */,
+				3655CF841B0F6563000BA0F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 368C8A6B1B0D87050061A6A8 /* Project object */;
+	rootObject = 3655CF541B0F6563000BA0F1 /* Project object */;
 }
