@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3608767C1B124CBD001529F9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3608767B1B124CBD001529F9 /* Game.swift */; };
 		3655CF621B0F6563000BA0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655CF611B0F6563000BA0F1 /* AppDelegate.swift */; };
 		3655CF641B0F6563000BA0F1 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3655CF631B0F6563000BA0F1 /* GameScene.sks */; };
 		3655CF661B0F6563000BA0F1 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655CF651B0F6563000BA0F1 /* GameScene.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3608767B1B124CBD001529F9 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		3655CF5C1B0F6563000BA0F1 /* Sanctuary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sanctuary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3655CF601B0F6563000BA0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3655CF611B0F6563000BA0F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				3655CF6E1B0F6563000BA0F1 /* LaunchScreen.xib */,
 				3655CF5F1B0F6563000BA0F1 /* Supporting Files */,
 				3655CF851B0F8199000BA0F1 /* Gamepad.swift */,
+				3608767B1B124CBD001529F9 /* Game.swift */,
 			);
 			path = Sanctuary;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3655CF661B0F6563000BA0F1 /* GameScene.swift in Sources */,
+				3608767C1B124CBD001529F9 /* Game.swift in Sources */,
 				3655CF681B0F6563000BA0F1 /* GameViewController.swift in Sources */,
 				3655CF621B0F6563000BA0F1 /* AppDelegate.swift in Sources */,
 				3655CF861B0F8199000BA0F1 /* Gamepad.swift in Sources */,
@@ -425,6 +429,7 @@
 				3655CF811B0F6563000BA0F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3655CF821B0F6563000BA0F1 /* Build configuration list for PBXNativeTarget "SanctuaryTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +438,7 @@
 				3655CF841B0F6563000BA0F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

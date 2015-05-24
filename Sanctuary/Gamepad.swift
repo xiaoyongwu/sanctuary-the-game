@@ -53,17 +53,20 @@ class GamepadModel {
 class Gamepad {
     var scene: SKScene
     
-    let models = [
-        "default": GamepadModel(
-            up: ControlModel(sprite: "button_dir_up_0", pos: CGPoint(x: 0, y: 0)),
-            down: ControlModel(sprite: "button_dir_down_0", pos: CGPoint(x: 0, y: 40)),
-            left: ControlModel(sprite: "button_dir_left_0", pos: CGPoint(x: -20, y: 20)),
-            right: ControlModel(sprite: "button_dir_right_0", pos: CGPoint(x: 20, y: 20))
-            )
-    ]
+    var models = Dictionary<String, GamepadModel>()
     
     init (scene: SKScene) {
         self.scene = scene
+        let midX = scene.frame.midX
+        let midY = scene.frame.midY
+        self.models = [
+            "default": GamepadModel(
+                up: ControlModel(sprite: "button_dir_up_0", pos: CGPoint(x: midX, y: midY + 20)),
+                down: ControlModel(sprite: "button_dir_down_0", pos: CGPoint(x: midX, y: midY - 20)),
+                left: ControlModel(sprite: "button_dir_left_0", pos: CGPoint(x: midX - 20, y: midY)),
+                right: ControlModel(sprite: "button_dir_right_0", pos: CGPoint(x: midX + 20, y: midY))
+            )
+        ]
     }
     
     func draw (model: String) {

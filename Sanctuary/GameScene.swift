@@ -17,7 +17,7 @@ class GameScene: SKScene {
         world.xScale = 1
         world.yScale = 1
         world.position = CGPoint(x: -255, y: -255)
-        //self.addChild(world)
+        self.addChild(world)
         
         let gamepad = Gamepad(scene: self)
         gamepad.draw("default")
