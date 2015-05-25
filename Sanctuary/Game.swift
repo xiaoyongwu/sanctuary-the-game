@@ -12,7 +12,7 @@ import SpriteKit
 import Darwin
 
 class Game {
-    let POINTS_PER_LEVEL = 5
+    static let POINTS_PER_LEVEL = 5
     enum ATTRS {
         case atk
         case def
@@ -30,19 +30,11 @@ class Game {
     }
     
     func gameover() {
-        let scene = GameScene.unarchiveFromFile("GameOver") as? GameScene
-        // Configure the view.
-        let skView = self.view
-        skView.showsFPS = true
-        skView.showsNodeCount = true
-            
-        /* Sprite Kit applies additional optimizations to improve rendering performance */
-        skView.ignoresSiblingOrder = true
-            
-        /* Set the scale mode to scale to fit the window */
-        scene.scaleMode = .AspectFill
+        let scene = GameOver(size: self.current_scene.size)
+        scene.scaleMode = .ResizeFill
+        scene.size = self.view.bounds.size
         
-        skView.presentScene(scene)
+        self.view.presentScene(scene)
     }
 }
 
@@ -86,7 +78,7 @@ class Player : Actor {
     }
     
     func give_points() {
-        self.freepoints += Game().POINTS_PER_LEVEL
+        self.freepoints += Game.POINTS_PER_LEVEL
     }
     
     func levelup(exp : Int) -> Bool {

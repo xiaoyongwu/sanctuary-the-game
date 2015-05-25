@@ -8,29 +8,58 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     var lastMenuPosition = 0
+    var game : Game?
+    var gamepad : Gamepad?
+    
+    var tileMap = JSTileMap(named: "town.tmx")
+    var tileSize:CGSize!
+    var xPointsToMovePerSecond:CGFloat = 0
     
     override func didMoveToView(view: SKView) {
+        game = Game(view: view, scene: self)
         /* Setup your scene here */
-        let world = SKSpriteNode(imageNamed: "light_world")
-        world.xScale = 1
-        world.yScale = 1
-        world.position = CGPoint(x: -255, y: -255)
-        self.addChild(world)
+        setupScene()
         
-        let gamepad = Gamepad(scene: self)
-        gamepad.draw("default")
+        gamepad = Gamepad(scene: self)
+    }
+    
+    func setupScene() {
+        backgroundColor = UIColor(red: 165.0/255.0, green: 216.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         
+        physicsWorld.gravity = CGVectorMake(0, -9.8)
+        physicsWorld.contactDelegate = self
         
-        /*
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 65;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
+        anchorPoint = CGPoint(x: 0, y: 0)
+        position = CGPoint(x: 0, y: 0)
         
-        self.addChild(myLabel)
-        */
+        let point = tileMap.calculateAccumulatedFrame()
+        let layer_meta = tileMap.layerNamed("meta")
+        layer_meta.hidden = true
+
+        println(point)
+        tileMap.position = CGPoint(x: 0, y: 0)
+        addChild(tileMap)
+        
+        addFloor()
+    }
+    
+    func addFloor() {
+        for var a = 0; a < Int(tileMap.mapSize.width); a++ {
+            for var b = 0; b < Int(tileMap.mapSize.height); b++ {
+                let layerInfo:TMXLayerInfo = tileMap.layers.firstObject as! TMXLayerInfo
+                let point = CGPoint(x: a, y: b)
+                //gid is the order of the tiles in Tiled starting at 1 (wierddd)
+                let gid = layerInfo.layer.tileGidAt(layerInfo.layer.pointForCoord(point))
+                
+                if gid == 2 || gid == 9 || gid == 8{
+                    let node = layerInfo.layer.tileAtCoord(point)
+                    node.physicsBody = SKPhysicsBody(rectangleOfSize: node.frame.size)
+                    node.physicsBody?.dynamic = false
+                }
+            }
+        }
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
