@@ -56,44 +56,6 @@ class Actor {
     }
 }
 
-class Monster : Actor {
-    func exp_reward () -> Int {
-        var attributes_sum = self.atk + self.def + self.spd + (self.hp/4) + (self.stam/2)
-        
-        return attributes_sum / 5
-    }
-}
-
-class Player : Actor {
-    var exp, level : Int
-    var freepoints : Int
-    var cur_hp : Int
-    
-    init (name : String) {
-        self.exp = 0
-        self.level = 1
-        self.freepoints = 0
-        self.cur_hp = 20
-        super.init(name: name, atk: 5, def: 5, spd: 5, hp : 20, stam : 10)
-    }
-    
-    func give_points() {
-        self.freepoints += Game.POINTS_PER_LEVEL
-    }
-    
-    func levelup(exp : Int) -> Bool {
-        self.exp += exp
-        
-        let current_level = Int(log2(Double(self.exp)))
-        if (current_level > self.level) {
-            self.level++
-            self.give_points()
-            return true
-        }
-        
-        return false
-    }
-}
 
 class Combat {
     var player : Player

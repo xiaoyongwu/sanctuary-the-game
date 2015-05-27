@@ -21,8 +21,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         game = Game(view: view, scene: self)
         /* Setup your scene here */
         setupScene()
-        
-        gamepad = Gamepad(scene: self)
     }
     
     func setupScene() {
@@ -38,7 +36,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let layer_meta = tileMap.layerNamed("meta")
         layer_meta.hidden = true
 
-        println(point)
         tileMap.position = CGPoint(x: 0, y: 0)
         addChild(tileMap)
         
@@ -63,24 +60,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        /* Called when a touch begins
         
-        for touch in (touches as! Set<UITouch>) {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
-        }
-        */
     }
    
     override func update(currentTime: CFTimeInterval) {
