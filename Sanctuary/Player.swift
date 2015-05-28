@@ -49,5 +49,4 @@ class Player : Actor {
         self.sprite.position = pos
     }
     
-    func draw(
 }

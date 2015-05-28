@@ -12,11 +12,6 @@
 		362AC0C11B14E0FC002B9690 /* player_movement.plist in Resources */ = {isa = PBXBuildFile; fileRef = 362AC0BE1B14E0FC002B9690 /* player_movement.plist */; };
 		362AC0C21B14E0FC002B9690 /* player_movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362AC0BF1B14E0FC002B9690 /* player_movement.swift */; };
 		3649EFD71B1291F4003620C2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3649EFD61B1291F4003620C2 /* libz.dylib */; };
-		3649EFDC1B12928E003620C2 /* town.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 3649EFDB1B12928E003620C2 /* town.tmx */; };
-		3649EFE21B129B0F003620C2 /* build_atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 3649EFDF1B129B0F003620C2 /* build_atlas.png */; };
-		3649EFE31B129B0F003620C2 /* obj_misk_atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 3649EFE01B129B0F003620C2 /* obj_misk_atlas.png */; };
-		3649EFE41B129B0F003620C2 /* terrain_atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 3649EFE11B129B0F003620C2 /* terrain_atlas.png */; };
-		3649EFE71B129C90003620C2 /* meta_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 3649EFE61B129C90003620C2 /* meta_tiles.png */; };
 		365100F11B16250B00A165E3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365100F01B16250B00A165E3 /* Player.swift */; };
 		365100F61B1625F300A165E3 /* Monsters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365100F51B1625F300A165E3 /* Monsters.swift */; };
 		3655CF621B0F6563000BA0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655CF611B0F6563000BA0F1 /* AppDelegate.swift */; };
@@ -28,10 +23,15 @@
 		3655CF701B0F6563000BA0F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3655CF6E1B0F6563000BA0F1 /* LaunchScreen.xib */; };
 		3655CF7C1B0F6563000BA0F1 /* SanctuaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655CF7B1B0F6563000BA0F1 /* SanctuaryTests.swift */; };
 		3655CF861B0F8199000BA0F1 /* Gamepad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655CF851B0F8199000BA0F1 /* Gamepad.swift */; };
+		36871EA31B16700E000DCC18 /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 36871EA01B16700E000DCC18 /* JSTileMap.m */; };
+		36871EA41B16700E000DCC18 /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 36871EA21B16700E000DCC18 /* LFCGzipUtility.m */; };
+		36871EAE1B1670DC000DCC18 /* build_atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 36871EAA1B1670DC000DCC18 /* build_atlas.png */; };
+		36871EAF1B1670DC000DCC18 /* meta_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 36871EAB1B1670DC000DCC18 /* meta_tiles.png */; };
+		36871EB01B1670DC000DCC18 /* obj_misk_atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 36871EAC1B1670DC000DCC18 /* obj_misk_atlas.png */; };
+		36871EB11B1670DC000DCC18 /* terrain_atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 36871EAD1B1670DC000DCC18 /* terrain_atlas.png */; };
+		36871EB31B1670EA000DCC18 /* town.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 36871EB21B1670EA000DCC18 /* town.tmx */; };
 		36D62BE31B126706006060A4 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D62BE21B126705006060A4 /* GameOver.swift */; };
 		36D62BE51B126AC3006060A4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D62BE41B126AC3006060A4 /* Extensions.swift */; };
-		36D62BEA1B1290CA006060A4 /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D62BE91B1290CA006060A4 /* LFCGzipUtility.m */; };
-		36D62BEE1B129116006060A4 /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D62BED1B129116006060A4 /* JSTileMap.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,12 +50,7 @@
 		362AC0BE1B14E0FC002B9690 /* player_movement.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = player_movement.plist; sourceTree = "<group>"; };
 		362AC0BF1B14E0FC002B9690 /* player_movement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = player_movement.swift; sourceTree = "<group>"; };
 		3649EFD61B1291F4003620C2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		3649EFDB1B12928E003620C2 /* town.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = town.tmx; path = ../../../Downloads/MiniRPG/MiniRPG/town.tmx; sourceTree = "<group>"; };
 		3649EFDD1B129784003620C2 /* Sanctuary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sanctuary-Bridging-Header.h"; sourceTree = "<group>"; };
-		3649EFDF1B129B0F003620C2 /* build_atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = build_atlas.png; path = ../../../Downloads/MiniRPG/MiniRPG/build_atlas.png; sourceTree = "<group>"; };
-		3649EFE01B129B0F003620C2 /* obj_misk_atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = obj_misk_atlas.png; path = ../../../Downloads/MiniRPG/MiniRPG/obj_misk_atlas.png; sourceTree = "<group>"; };
-		3649EFE11B129B0F003620C2 /* terrain_atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terrain_atlas.png; path = ../../../Downloads/MiniRPG/MiniRPG/terrain_atlas.png; sourceTree = "<group>"; };
-		3649EFE61B129C90003620C2 /* meta_tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = meta_tiles.png; path = ../../../Downloads/MiniRPG/MiniRPG/meta_tiles.png; sourceTree = "<group>"; };
 		365100F01B16250B00A165E3 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		365100F51B1625F300A165E3 /* Monsters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monsters.swift; sourceTree = "<group>"; };
 		3655CF5C1B0F6563000BA0F1 /* Sanctuary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sanctuary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,12 +66,17 @@
 		3655CF7A1B0F6563000BA0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3655CF7B1B0F6563000BA0F1 /* SanctuaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanctuaryTests.swift; sourceTree = "<group>"; };
 		3655CF851B0F8199000BA0F1 /* Gamepad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gamepad.swift; sourceTree = "<group>"; };
+		36871E9F1B16700E000DCC18 /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSTileMap.h; path = APIs/JSTileMap.h; sourceTree = "<group>"; };
+		36871EA01B16700E000DCC18 /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSTileMap.m; path = APIs/JSTileMap.m; sourceTree = "<group>"; };
+		36871EA11B16700E000DCC18 /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LFCGzipUtility.h; path = APIs/LFCGzipUtility.h; sourceTree = "<group>"; };
+		36871EA21B16700E000DCC18 /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LFCGzipUtility.m; path = APIs/LFCGzipUtility.m; sourceTree = "<group>"; };
+		36871EAA1B1670DC000DCC18 /* build_atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = build_atlas.png; sourceTree = "<group>"; };
+		36871EAB1B1670DC000DCC18 /* meta_tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meta_tiles.png; sourceTree = "<group>"; };
+		36871EAC1B1670DC000DCC18 /* obj_misk_atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_misk_atlas.png; sourceTree = "<group>"; };
+		36871EAD1B1670DC000DCC18 /* terrain_atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = terrain_atlas.png; sourceTree = "<group>"; };
+		36871EB21B1670EA000DCC18 /* town.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = town.tmx; path = Maps/town.tmx; sourceTree = "<group>"; };
 		36D62BE21B126705006060A4 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		36D62BE41B126AC3006060A4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		36D62BE81B1290CA006060A4 /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LFCGzipUtility.h; path = "../../../Downloads/JSTileMap-master/LFCGzipUtility.h"; sourceTree = "<group>"; };
-		36D62BE91B1290CA006060A4 /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LFCGzipUtility.m; path = "../../../Downloads/JSTileMap-master/LFCGzipUtility.m"; sourceTree = "<group>"; };
-		36D62BEC1B129116006060A4 /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSTileMap.h; path = "../../../Downloads/JSTileMap-master/TMXMapSample/JSTileMap.h"; sourceTree = "<group>"; };
-		36D62BED1B129116006060A4 /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSTileMap.m; path = "../../../Downloads/JSTileMap-master/TMXMapSample/JSTileMap.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,21 +119,10 @@
 		3649EFD81B12925A003620C2 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				3649EFE51B129C11003620C2 /* Tilesets */,
-				3649EFDB1B12928E003620C2 /* town.tmx */,
+				36871EB21B1670EA000DCC18 /* town.tmx */,
+				36871EA91B1670DC000DCC18 /* Tilesets */,
 			);
 			name = Maps;
-			sourceTree = "<group>";
-		};
-		3649EFE51B129C11003620C2 /* Tilesets */ = {
-			isa = PBXGroup;
-			children = (
-				3649EFE61B129C90003620C2 /* meta_tiles.png */,
-				3649EFDF1B129B0F003620C2 /* build_atlas.png */,
-				3649EFE01B129B0F003620C2 /* obj_misk_atlas.png */,
-				3649EFE11B129B0F003620C2 /* terrain_atlas.png */,
-			);
-			name = Tilesets;
 			sourceTree = "<group>";
 		};
 		365100F21B16251A00A165E3 /* Models */ = {
@@ -187,12 +176,12 @@
 		3655CF5E1B0F6563000BA0F1 /* Sanctuary */ = {
 			isa = PBXGroup;
 			children = (
+				36871E9E1B166FFB000DCC18 /* APIs */,
 				365100F41B16253B00A165E3 /* Libs */,
 				365100F31B16252B00A165E3 /* Scenes */,
 				365100F21B16251A00A165E3 /* Models */,
 				362AC0BB1B14E0FC002B9690 /* Sprites */,
 				3649EFD81B12925A003620C2 /* Maps */,
-				36D62BEB1B1290FF006060A4 /* APIs */,
 				3655CF611B0F6563000BA0F1 /* AppDelegate.swift */,
 				3655CF671B0F6563000BA0F1 /* GameViewController.swift */,
 				3655CF691B0F6563000BA0F1 /* Main.storyboard */,
@@ -229,15 +218,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		36D62BEB1B1290FF006060A4 /* APIs */ = {
+		36871E9E1B166FFB000DCC18 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
-				36D62BEC1B129116006060A4 /* JSTileMap.h */,
-				36D62BED1B129116006060A4 /* JSTileMap.m */,
-				36D62BE81B1290CA006060A4 /* LFCGzipUtility.h */,
-				36D62BE91B1290CA006060A4 /* LFCGzipUtility.m */,
+				36871E9F1B16700E000DCC18 /* JSTileMap.h */,
+				36871EA01B16700E000DCC18 /* JSTileMap.m */,
+				36871EA11B16700E000DCC18 /* LFCGzipUtility.h */,
+				36871EA21B16700E000DCC18 /* LFCGzipUtility.m */,
 			);
 			name = APIs;
+			sourceTree = "<group>";
+		};
+		36871EA91B1670DC000DCC18 /* Tilesets */ = {
+			isa = PBXGroup;
+			children = (
+				36871EAA1B1670DC000DCC18 /* build_atlas.png */,
+				36871EAB1B1670DC000DCC18 /* meta_tiles.png */,
+				36871EAC1B1670DC000DCC18 /* obj_misk_atlas.png */,
+				36871EAD1B1670DC000DCC18 /* terrain_atlas.png */,
+			);
+			name = Tilesets;
+			path = Maps/Tilesets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,15 +322,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				362AC0C01B14E0FC002B9690 /* player_movement.1.png in Resources */,
+				36871EB31B1670EA000DCC18 /* town.tmx in Resources */,
+				36871EAF1B1670DC000DCC18 /* meta_tiles.png in Resources */,
 				3655CF701B0F6563000BA0F1 /* LaunchScreen.xib in Resources */,
+				36871EB01B1670DC000DCC18 /* obj_misk_atlas.png in Resources */,
+				36871EB11B1670DC000DCC18 /* terrain_atlas.png in Resources */,
 				3655CF6D1B0F6563000BA0F1 /* Images.xcassets in Resources */,
+				36871EAE1B1670DC000DCC18 /* build_atlas.png in Resources */,
 				362AC0C11B14E0FC002B9690 /* player_movement.plist in Resources */,
 				3655CF641B0F6563000BA0F1 /* GameScene.sks in Resources */,
-				3649EFE31B129B0F003620C2 /* obj_misk_atlas.png in Resources */,
-				3649EFDC1B12928E003620C2 /* town.tmx in Resources */,
-				3649EFE71B129C90003620C2 /* meta_tiles.png in Resources */,
-				3649EFE41B129B0F003620C2 /* terrain_atlas.png in Resources */,
-				3649EFE21B129B0F003620C2 /* build_atlas.png in Resources */,
 				3655CF6B1B0F6563000BA0F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,13 +353,13 @@
 				3655CF661B0F6563000BA0F1 /* GameScene.swift in Sources */,
 				3608767C1B124CBD001529F9 /* Game.swift in Sources */,
 				3655CF681B0F6563000BA0F1 /* GameViewController.swift in Sources */,
-				36D62BEE1B129116006060A4 /* JSTileMap.m in Sources */,
 				36D62BE31B126706006060A4 /* GameOver.swift in Sources */,
 				3655CF621B0F6563000BA0F1 /* AppDelegate.swift in Sources */,
 				3655CF861B0F8199000BA0F1 /* Gamepad.swift in Sources */,
 				365100F61B1625F300A165E3 /* Monsters.swift in Sources */,
 				362AC0C21B14E0FC002B9690 /* player_movement.swift in Sources */,
-				36D62BEA1B1290CA006060A4 /* LFCGzipUtility.m in Sources */,
+				36871EA31B16700E000DCC18 /* JSTileMap.m in Sources */,
+				36871EA41B16700E000DCC18 /* LFCGzipUtility.m in Sources */,
 				36D62BE51B126AC3006060A4 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
