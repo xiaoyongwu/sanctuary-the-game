@@ -1,5 +1,5 @@
 //
-//  GameScene.swift
+//  MapScene.swift
 //  Sanctuary
 //
 //  Created by uriel bertoche on 5/22/15.
@@ -8,16 +8,16 @@
 
 import SpriteKit
 
-class GameScene: MapScene {
-    override var mapName : String {
-        get {
-            return mapName
-        }
-        set {
-            if newValue {
-                
-            }
-        }
+class MapScene: SKScene, SKPhysicsContactDelegate {
+    var lastMenuPosition = 0
+    var game : Game?
+    
+    var mapName = "town.tmx"
+    var tileMap:JSTileMap! //= JSTileMap(named: "town.tmx")
+    var tileSize:CGSize!
+    
+    func setMap () {
+        tileMap = JSTileMap(named: mapName)
     }
     
     override func didMoveToView(view: SKView) {
@@ -27,18 +27,16 @@ class GameScene: MapScene {
     }
     
     func setupScene() {
+        setMap()
         backgroundColor = UIColor(red: 165.0/255.0, green: 216.0/255.0, blue: 255.0/255.0, alpha: 1.0)
-        
-        physicsWorld.gravity = CGVectorMake(0, -9.8)
-        physicsWorld.contactDelegate = self
         
         anchorPoint = CGPoint(x: 0, y: 0)
         position = CGPoint(x: 0, y: 0)
         
         let point = tileMap.calculateAccumulatedFrame()
         let layer_meta = tileMap.layerNamed("meta")
-        // layer_meta.hidden = true
-
+        layer_meta.hidden = true
+        
         tileMap.position = CGPoint(x: 0, y: 0)
         addChild(tileMap)
         
@@ -74,7 +72,7 @@ class GameScene: MapScene {
         
         alert_view.show()
     }
-   
+    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
