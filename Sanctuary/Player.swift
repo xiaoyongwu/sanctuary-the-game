@@ -12,6 +12,10 @@ class Player : Actor {
     var exp, level : Int
     var freepoints : Int
     var cur_hp : Int
+    var velocity : CGVector?
+    var targetLocation : CGPoint!
+    var targetPosition : CGPoint!
+    var showCollisionRect : Bool = true
     
     var movement : PlayerMovement
     var sprite : SKSpriteNode
@@ -26,6 +30,65 @@ class Player : Actor {
         self.sprite = SKSpriteNode(texture: self.movement.movement_frame60())
         
         super.init(name: name, atk: 5, def: 5, spd: 5, hp : 20, stam : 10)
+    }
+    
+    func collisionRectAtTarget() -> CGRect {
+        // Calculate smaller rectangle
+        let spriteFrame = self.sprite.frame
+        var collisionRect = CGRectInset(spriteFrame, 4, 2)
+        var movement = CGPointMake(self.targetPosition.x - self.position.x, self.targetPosition.y - self.position.y)
+        
+        // Move rectangle to target position
+        collisionRect = CGRectOffset(collisionRect, movement.x, movement.y - 2)
+        return collisionRect
+    }
+    
+    func update() {
+        if showCollisionRect {
+            self.sprite.removeAllChildren()
+            var box = SKShapeNode()
+            box.path = CGPathCreateWithRect(self.collisionRectAtTarget(), nil)
+            box.strokeColor = SKColor.redColor()
+            box.lineWidth = 0.1
+            box.position = CGPointMake(-self.targetPosition.x, -self.targetPosition.y)
+            self.sprite.addChild(box)
+        }
+        self.move()
+        
+        // Implement collision logics
+        
+        self.position = self.targetPosition
+    }
+    
+    func move() {
+        var targetExists = false
+
+        
+        let vel = CGFloat(10)
+        let targetLocation = self.targetLocation
+        let position = self.position
+        self.targetPosition = position
+        
+        if targetLocation == position {
+            return
+        } else {
+        }
+        
+        self.velocity = CGVector()
+        
+        if position.x > targetLocation.x {
+           self.velocity!.dx = fmax(vel * CGFloat(-1), targetLocation.x - position.x)
+        } else {
+           self.velocity!.dx = fmin(vel, targetLocation.x - position.x)
+        }
+        
+        if position.y > targetLocation.y {
+            self.velocity!.dy = fmax(vel * CGFloat(-1), targetLocation.y - position.y)
+        } else {
+            self.velocity!.dy = fmin(vel, targetLocation.y - position.y)
+        }
+        
+        self.targetPosition = CGPointMake(position.x + self.velocity!.dx, position.y + self.velocity!.dy)
     }
     
     func give_points() {
@@ -47,6 +110,16 @@ class Player : Actor {
     
     func set_position(pos : CGPoint) {
         self.sprite.position = pos
+    }
+    
+    var position : CGPoint {
+        get {
+            return self.sprite.position
+        }
+        
+        set (newPosition) {
+            self.sprite.position = newPosition
+        }
     }
     
 }

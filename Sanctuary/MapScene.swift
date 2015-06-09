@@ -15,7 +15,9 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
     var mapName = ""
     var map:JSTileMap! //= JSTileMap(named: "town.tmx")
     var tileSize:CGSize!
-    var camera:SKSpriteNode!
+    var camera = SKNode()
+    var overlay = SKNode()
+    var player = Player(name: "Aer")
     
     func setMap () {
         map = JSTileMap(named: mapName)
@@ -27,80 +29,92 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         setupScene()
     }
     
-    func setupScene() {
-        setMap()
-        backgroundColor = UIColor(red: 165.0/255.0, green: 216.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+    func getMarkerPosition (markerName : String) -> CGPoint {
+        var position : CGPoint = CGPointMake(0,0)
         
-        self.camera = SKSpriteNode(color: SKColor.blackColor(), size: CGSizeMake(5, 5))
+        if let markerLayer : TMXObjectGroup = self.map.groupNamed("markers") as? TMXObjectGroup {
+            if let marker : NSDictionary = markerLayer.objectNamed(markerName) as? NSDictionary{
+                position = CGPointMake(marker.valueForKey("x") as! CGFloat, marker.valueForKey("y") as! CGFloat)
+            }
+        }
+        
+        return position
+    }
+    
+    func setupScene() {
+        // Load Level
+        setMap()
+        let layer_meta = map.layerNamed("meta")
+        self.map.zPosition = 0
+        backgroundColor = UIColor(red: 165.0/255.0, green: 216.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        layer_meta.hidden = true
+        self.addChild(map)
+        
+        // Set up overlay
+        self.overlay.zPosition = 10000
+        self.addChild(overlay)
+        
+        // Set up camera
         self.camera.position = CGPointMake(size.width * 0.5, size.height * 0.5)
         self.map.addChild(camera)
         
-        anchorPoint = CGPoint(x: 0, y: 0)
-        position = CGPoint(x: 0, y: 0)
+        // Set up player
+        self.player.position = getMarkerPosition("startpoint")
+        self.player.targetLocation = self.player.position
+        self.map.addChild(self.player.sprite)
         
-        let point = map.calculateAccumulatedFrame()
-        let layer_meta = map.layerNamed("meta")
-        layer_meta.hidden = true
-        
-        map.position = CGPoint(x: 0, y: 0)
-        addChild(map)
-        
-        addFloor()
-    }
-    
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        for touch : AnyObject in touches {
-            var touchLocation = touch.locationInNode(self)
-            var previousTouchLocation = touch.previousLocationInNode(self)
-            var movement = CGPointMake(touchLocation.x - previousTouchLocation.x,
-                                       touchLocation.y - previousTouchLocation.y)
-            
-            self.camera.position = CGPointMake(self.camera.position.x + movement.x,
-                                               self.camera.position.y + movement.y)
-        }
-    }
-    
-    func addFloor() {
-        for var a = 0; a < Int(map.mapSize.width); a++ {
-            for var b = 0; b < Int(map.mapSize.height); b++ {
-                let layerInfo:TMXLayerInfo = map.layers.firstObject as! TMXLayerInfo
-                let point = CGPoint(x: a, y: b)
-                //gid is the order of the tiles in Tiled starting at 1 (wierddd)
-                let gid = layerInfo.layer.tileGidAt(layerInfo.layer.pointForCoord(point))
-                
-                if gid == 2 || gid == 9 || gid == 8{
-                    let node = layerInfo.layer.tileAtCoord(point)
-                    node.physicsBody = SKPhysicsBody(rectangleOfSize: node.frame.size)
-                    node.physicsBody?.dynamic = false
-                }
-            }
-        }
     }
     
     func updateView() {
         
+        // Calculate clamped x and y locations
+        var x = fmax(self.camera.position.x, self.size.width * 0.5)
+        var y = fmax(self.camera.position.y, self.size.height * 0.38)
+        x = fmin(x, (self.map.mapSize.width * self.map.tileSize.width) - (self.size.width * 0.5))
+        y = fmin(y, (self.map.mapSize.height * self.map.tileSize.height) - (self.size.height * 0.38))
+        
+        // Debug info
+        /*
+        var values_label = SKLabelNode(text: "mapsize: \(self.map.mapSize.width) x \(self.map.mapSize.height)\ntilesize: \(self.map.tileSize.width) x \(self.map.tileSize.height)\nself: \(self.size.width) x \(self.size.height)")
+        values_label.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) - 50)
+        self.overlay.addChild(values_label)
+        */
+        
+        // Move player
+        self.player.update()
+        
         // Center veiw on position of camera in the world
-        self.map.position = CGPointMake((self.size.width * 0.5 - self.camera.position.x),
-                                            (self.size.height * 0.5 - self.camera.position.y))
+        self.map.position = CGPointMake((self.size.width * 0.5) - x,
+                                            (self.size.height * 0.5) - y)
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        /*
-        let touch = touches.first as! UITouch
-        let location = touch.locationInNode(self)
+        for touch : AnyObject in touches {
+            var touchLocation = touch.locationInNode(self.map)
+            /*
+            var previousTouchLocation = touch.previousLocationInNode(self)
+            var movement = CGPointMake(touchLocation.x - previousTouchLocation.x,
+                touchLocation.y - previousTouchLocation.y)
+            
+            var targetLocation =  CGPointMake(self.camera.position.x + movement.x,
+                self.camera.position.y + movement.y)
+            */
+            self.player.targetLocation = touchLocation
+        }
         
-        let meta_layer = tileMap.layerNamed("meta")
-        let coord_touch = meta_layer.coordForPoint(location)
-        let tile = meta_layer.layerInfo.tileGidAtCoord(coord_touch)
-        
-        let alert_view = UIAlertView(title: "Tile GID", message: "\(tile)", delegate: nil, cancelButtonTitle: "Close")
-        
-        // alert_view.show()
-        */
     }
     
     override func update(currentTime: CFTimeInterval) {
+        self.camera.position = CGPointMake(self.player.position.x, self.player.position.y)
+        
         /* Called before each frame is rendered */
+        self.overlay.removeAllChildren()
         updateView()
+        
+        var coordinates = self.camera.position
+        // coordinates = self.map.position
+        let coord_label = SKLabelNode(text: "x: \(coordinates.x) y: \(coordinates.y)")
+        coord_label.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
+        self.overlay.addChild(coord_label)
     }
 }
