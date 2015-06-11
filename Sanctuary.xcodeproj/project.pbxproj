@@ -32,8 +32,10 @@
 		36871EA41B16700E000DCC18 /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 36871EA21B16700E000DCC18 /* LFCGzipUtility.m */; };
 		36871EB31B1670EA000DCC18 /* town.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 36871EB21B1670EA000DCC18 /* town.tmx */; };
 		36CF08E71B20E1A300E0BA09 /* MapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CF08E61B20E1A300E0BA09 /* MapScene.swift */; };
+		36D08EF01B28CA0000EAB550 /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D08EEF1B28CA0000EAB550 /* Zone.swift */; };
 		36D62BE31B126706006060A4 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D62BE21B126705006060A4 /* GameOver.swift */; };
 		36D62BE51B126AC3006060A4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D62BE41B126AC3006060A4 /* Extensions.swift */; };
+		36FE3A581B26A09000AF6F0B /* CombatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FE3A571B26A09000AF6F0B /* CombatScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,8 +81,10 @@
 		36871EA21B16700E000DCC18 /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LFCGzipUtility.m; path = APIs/LFCGzipUtility.m; sourceTree = "<group>"; };
 		36871EB21B1670EA000DCC18 /* town.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = town.tmx; path = Maps/town.tmx; sourceTree = "<group>"; };
 		36CF08E61B20E1A300E0BA09 /* MapScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScene.swift; sourceTree = "<group>"; };
+		36D08EEF1B28CA0000EAB550 /* Zone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
 		36D62BE21B126705006060A4 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		36D62BE41B126AC3006060A4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		36FE3A571B26A09000AF6F0B /* CombatScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 				3608767B1B124CBD001529F9 /* Game.swift */,
 				365100F01B16250B00A165E3 /* Player.swift */,
 				365100F51B1625F300A165E3 /* Monsters.swift */,
+				36D08EEF1B28CA0000EAB550 /* Zone.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 				3655CF631B0F6563000BA0F1 /* GameScene.sks */,
 				3655CF651B0F6563000BA0F1 /* GameScene.swift */,
 				36D62BE21B126705006060A4 /* GameOver.swift */,
+				36FE3A571B26A09000AF6F0B /* CombatScene.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3643125A1B1F7AFB0072105C /* Pathfinding.swift in Sources */,
+				36D08EF01B28CA0000EAB550 /* Zone.swift in Sources */,
 				365100F11B16250B00A165E3 /* Player.swift in Sources */,
 				3655CF661B0F6563000BA0F1 /* GameScene.swift in Sources */,
 				3608767C1B124CBD001529F9 /* Game.swift in Sources */,
@@ -367,6 +374,7 @@
 				36871EA31B16700E000DCC18 /* JSTileMap.m in Sources */,
 				36871EA41B16700E000DCC18 /* LFCGzipUtility.m in Sources */,
 				36D62BE51B126AC3006060A4 /* Extensions.swift in Sources */,
+				36FE3A581B26A09000AF6F0B /* CombatScene.swift in Sources */,
 				36CF08E71B20E1A300E0BA09 /* MapScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

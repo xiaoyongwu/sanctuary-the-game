@@ -66,9 +66,23 @@ class Combat {
         self.monster = monster
     }
     
-    func check_end () {
-        
+    func atk()->Int {
+        let Base = 5     //player.atk+arma.dmg
+        return Base
     }
-
+    
+    func calc_damage()->Int {
+        let damage = ((2*player.level+10)/250) * (player.atk/monster.def) * self.atk()+2
+        return damage
+    }
+    
+    func check_end () {
+        if(player.hp<=0) {
+            GameOver();
+        }
+        if(monster.hp<=0) {
+            MapScene()
+        }
+    }
 }
 

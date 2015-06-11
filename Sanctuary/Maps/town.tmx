@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="60" tilewidth="32" tileheight="32" nextobjectid="6">
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="60" height="60" tilewidth="32" tileheight="32" nextobjectid="11">
  <tileset firstgid="1" name="terrain_atlas" tilewidth="32" tileheight="32">
   <image source="terrain_atlas.png" width="1024" height="1024"/>
  </tileset>
@@ -68,5 +68,12 @@
  </layer>
  <objectgroup name="markers">
   <object id="3" name="startpoint" x="179" y="274" width="32" height="46"/>
+ </objectgroup>
+ <objectgroup name="zones">
+  <object id="10" name="mob_area_1" type="mob_area" x="4" y="4" width="633" height="634">
+   <properties>
+    <property name="mob_gid" value="1"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

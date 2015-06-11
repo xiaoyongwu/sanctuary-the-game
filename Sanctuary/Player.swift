@@ -15,7 +15,7 @@ class Player : Actor {
     var velocity : CGVector?
     var targetLocation : CGPoint!
     var targetPosition : CGPoint!
-    var showCollisionRect : Bool = true
+    var showCollisionRect : Bool = false
     
     var movement : PlayerMovement
     var sprite : SKSpriteNode
@@ -110,6 +110,10 @@ class Player : Actor {
     
     func set_position(pos : CGPoint) {
         self.sprite.position = pos
+    }
+    
+    func stopMoving() {
+        self.targetLocation = self.position
     }
     
     var position : CGPoint {

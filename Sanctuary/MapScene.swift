@@ -17,7 +17,13 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
     var tileSize:CGSize!
     var camera = SKNode()
     var overlay = SKNode()
+    var zones = [Zone]()
     var player = Player(name: "Aer")
+    var mobGroups = [Int: MonstersGroup]()
+    
+    func setMonsterGroups (mob_groups : [Int: MonstersGroup]) {
+        mobGroups = mob_groups
+    }
     
     func setMap () {
         map = JSTileMap(named: mapName)
@@ -29,11 +35,57 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         setupScene()
     }
     
+    func checkEncounter() -> Monster? {
+        if let mob_gid = getPlayerInZone() as? Int {
+            if mob_gid != 0 {
+                var monsterGroup = mobGroups[mob_gid]
+                let battle_monster = arc4random_uniform(50)
+                if(battle_monster < 2){
+                    var monster = monsterGroup?.getRandomMonster(1.0)
+                    return monster
+                }
+            }
+        }
+        return nil
+    }
+    
+    func getPlayerInZone() -> Int {
+        for zone in zones {
+            if zone.isIn(self.player.position) {
+                return zone.mob_gid
+            }
+        }
+        
+        return 0
+    }
+    
+    func getZoneRects () {
+        
+        if let zoneLayer = self.map.groupNamed("zones") as? TMXObjectGroup {
+            for object in zoneLayer.objects {
+                if let zone = object as? NSDictionary {
+                    let x = zone.valueForKey("x") as! CGFloat
+                    let y = zone.valueForKey("y") as! CGFloat
+                    var w = zone.valueForKey("width") as! NSString
+                    var h = zone.valueForKey("height") as! NSString
+                    var width = w.floatValue
+                    var height = h.floatValue
+                    let name = zone.valueForKey("name") as! String
+                    let mid = zone.valueForKey("mob_gid") as! NSString
+                    let mob_gid = mid.integerValue
+                    var rect = CGRectMake(x, y, CGFloat(width), CGFloat(height))
+                    let newZone = Zone(rect: rect, name: name, m_gid: mob_gid)
+                    self.zones.append(newZone)
+                }
+            }
+        }
+    }
+    
     func getMarkerPosition (markerName : String) -> CGPoint {
         var position : CGPoint = CGPointMake(0,0)
         
-        if let markerLayer : TMXObjectGroup = self.map.groupNamed("markers") as? TMXObjectGroup {
-            if let marker : NSDictionary = markerLayer.objectNamed(markerName) as? NSDictionary{
+        if let markerLayer = self.map.groupNamed("markers") as? TMXObjectGroup {
+            if let marker = markerLayer.objectNamed(markerName) as? NSDictionary{
                 position = CGPointMake(marker.valueForKey("x") as! CGFloat, marker.valueForKey("y") as! CGFloat)
             }
         }
@@ -48,6 +100,7 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         self.map.zPosition = 0
         backgroundColor = UIColor(red: 165.0/255.0, green: 216.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         layer_meta.hidden = true
+        getZoneRects()
         self.addChild(map)
         
         // Set up overlay
@@ -74,14 +127,18 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         y = fmin(y, (self.map.mapSize.height * self.map.tileSize.height) - (self.size.height * 0.38))
         
         // Debug info
-        /*
-        var values_label = SKLabelNode(text: "mapsize: \(self.map.mapSize.width) x \(self.map.mapSize.height)\ntilesize: \(self.map.tileSize.width) x \(self.map.tileSize.height)\nself: \(self.size.width) x \(self.size.height)")
-        values_label.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) - 50)
-        self.overlay.addChild(values_label)
-        */
+        // To add here if needed
         
         // Move player
         self.player.update()
+        if (self.player.position != self.player.targetLocation) {
+            if let monster = checkEncounter() as Monster! {
+                player.stopMoving()
+                let combat_alert = UIAlertView(title: monster.name, message: "Found", delegate: nil, cancelButtonTitle: "Close")
+                combat_alert.show()
+            }
+            
+        }
         
         // Center veiw on position of camera in the world
         self.map.position = CGPointMake((self.size.width * 0.5) - x,
@@ -91,14 +148,6 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         for touch : AnyObject in touches {
             var touchLocation = touch.locationInNode(self.map)
-            /*
-            var previousTouchLocation = touch.previousLocationInNode(self)
-            var movement = CGPointMake(touchLocation.x - previousTouchLocation.x,
-                touchLocation.y - previousTouchLocation.y)
-            
-            var targetLocation =  CGPointMake(self.camera.position.x + movement.x,
-                self.camera.position.y + movement.y)
-            */
             self.player.targetLocation = touchLocation
         }
         
@@ -118,3 +167,4 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         self.overlay.addChild(coord_label)
     }
 }
+
