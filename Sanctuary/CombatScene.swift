@@ -8,11 +8,11 @@
 
 import Foundation
 
-class CombatScene : SKScene {
+class CombatScene : SKScene, SKPhysicsContactDelegate {
     var monster : Monster!
     var player : Player!
     
-    override func didMoveToView() {
+    override func didMoveToView(view: SKView) {
         var combat = Combat(player: player, monster: monster)
         
         
