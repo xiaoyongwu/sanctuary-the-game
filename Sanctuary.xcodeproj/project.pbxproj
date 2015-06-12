@@ -28,8 +28,6 @@
 		3655CF701B0F6563000BA0F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3655CF6E1B0F6563000BA0F1 /* LaunchScreen.xib */; };
 		3655CF7C1B0F6563000BA0F1 /* SanctuaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655CF7B1B0F6563000BA0F1 /* SanctuaryTests.swift */; };
 		3655CF861B0F8199000BA0F1 /* Gamepad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655CF851B0F8199000BA0F1 /* Gamepad.swift */; };
-		368525B11B2A2F3900C0D0FD /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 368525AF1B2A2F3900C0D0FD /* Fire.sks */; };
-		368525B21B2A2F3900C0D0FD /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 368525B01B2A2F3900C0D0FD /* spark.png */; };
 		36871EA31B16700E000DCC18 /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 36871EA01B16700E000DCC18 /* JSTileMap.m */; };
 		36871EA41B16700E000DCC18 /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 36871EA21B16700E000DCC18 /* LFCGzipUtility.m */; };
 		36871EB31B1670EA000DCC18 /* town.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 36871EB21B1670EA000DCC18 /* town.tmx */; };
@@ -79,8 +77,6 @@
 		3655CF7A1B0F6563000BA0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3655CF7B1B0F6563000BA0F1 /* SanctuaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanctuaryTests.swift; sourceTree = "<group>"; };
 		3655CF851B0F8199000BA0F1 /* Gamepad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gamepad.swift; sourceTree = "<group>"; };
-		368525AF1B2A2F3900C0D0FD /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
-		368525B01B2A2F3900C0D0FD /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		36871E9F1B16700E000DCC18 /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSTileMap.h; path = APIs/JSTileMap.h; sourceTree = "<group>"; };
 		36871EA01B16700E000DCC18 /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSTileMap.m; path = APIs/JSTileMap.m; sourceTree = "<group>"; };
 		36871EA11B16700E000DCC18 /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LFCGzipUtility.h; path = APIs/LFCGzipUtility.h; sourceTree = "<group>"; };
@@ -208,7 +204,6 @@
 		3655CF5E1B0F6563000BA0F1 /* Sanctuary */ = {
 			isa = PBXGroup;
 			children = (
-				36D08EF51B2A298B00EAB550 /* Particles */,
 				364312581B1F7AC30072105C /* Pathfinding */,
 				36871E9E1B166FFB000DCC18 /* APIs */,
 				365100F41B16253B00A165E3 /* Libs */,
@@ -261,15 +256,6 @@
 				36871EA21B16700E000DCC18 /* LFCGzipUtility.m */,
 			);
 			name = APIs;
-			sourceTree = "<group>";
-		};
-		36D08EF51B2A298B00EAB550 /* Particles */ = {
-			isa = PBXGroup;
-			children = (
-				368525AF1B2A2F3900C0D0FD /* Fire.sks */,
-				368525B01B2A2F3900C0D0FD /* spark.png */,
-			);
-			name = Particles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,12 +343,10 @@
 				3655CF701B0F6563000BA0F1 /* LaunchScreen.xib in Resources */,
 				364312631B1F87F00072105C /* obj_misk_atlas.png in Resources */,
 				3655CF6D1B0F6563000BA0F1 /* Images.xcassets in Resources */,
-				368525B21B2A2F3900C0D0FD /* spark.png in Resources */,
 				364312641B1F87F00072105C /* terrain_atlas.png in Resources */,
 				362AC0C11B14E0FC002B9690 /* player_movement.plist in Resources */,
 				364312621B1F87F00072105C /* meta_tiles.png in Resources */,
 				3655CF641B0F6563000BA0F1 /* GameScene.sks in Resources */,
-				368525B11B2A2F3900C0D0FD /* Fire.sks in Resources */,
 				364312611B1F87F00072105C /* build_atlas.png in Resources */,
 				3655CF6B1B0F6563000BA0F1 /* Main.storyboard in Resources */,
 			);
