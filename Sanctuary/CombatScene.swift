@@ -9,12 +9,27 @@
 import Foundation
 
 class CombatScene : SKScene, SKPhysicsContactDelegate {
-    var monster : Monster!
-    var player : Player!
+    var mapScene = MapScene()
     
     override func didMoveToView(view: SKView) {
-        var combat = Combat(player: player, monster: monster)
+        var player = mapScene.player
+        var monster = mapScene.monster
+        var combat = Combat(player: player, monster: monster!)
         
+        var background = SKSpriteNode(imageNamed: "Grassland")
+        background.position = CGPointMake(0, 0)
+
+        self.addChild(background)
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        for touch : AnyObject in touches {
+            var touchLocation = touch.locationInNode(self)
+            
+            let transition = SKTransition.revealWithDirection(SKTransitionDirection.Up, duration: 1.0)
+            self.view!.presentScene(self.mapScene)
+        }
         
     }
+    
 }

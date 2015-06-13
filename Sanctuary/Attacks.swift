@@ -50,7 +50,7 @@ class Bite : Attack {
         super.init(name: "Bite", sound: "None", power: 60, particles: nil)
     }
     
-    override attack(target : Actor) -> Bool {
-    
+    override func attack(target : Actor) -> Bool {
+        return false
     }
 }

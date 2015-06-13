@@ -19,6 +19,7 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
     var overlay = SKNode()
     var zones = [Zone]()
     var player = Player(name: "Aer")
+    var monster : Monster?
     var mobGroups = [Int: MonstersGroup]()
     
     func setMonsterGroups (mob_groups : [Int: MonstersGroup]) {
@@ -134,8 +135,16 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         if (self.player.position != self.player.targetLocation) {
             if let monster = checkEncounter() as Monster! {
                 player.stopMoving()
-                let combat_alert = UIAlertView(title: monster.name, message: "Found", delegate: nil, cancelButtonTitle: "Close")
-                combat_alert.show()
+                self.monster = monster
+                // let combat_alert = UIAlertView(title: monster.name, message: "Found", delegate: nil, cancelButtonTitle: "Close")
+                // combat_alert.show()
+                let transition = SKTransition.revealWithDirection(SKTransitionDirection.Down, duration: 1.0)
+                
+                let scene = CombatScene(size: self.size)
+                scene.mapScene = self
+                scene.scaleMode = SKSceneScaleMode.AspectFill
+                
+                self.view!.presentScene(scene, transition: transition)
             }
             
         }
