@@ -14,7 +14,7 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         var player = mapScene.player
         var monster = mapScene.monster
-        var combat = Combat(player: player, monster: monster!)
+        //var combat = Combat(player: player, monster: monster!)
         
         var background = SKSpriteNode(imageNamed: "Grassland")
         background.position = CGPointMake(0, 0)
@@ -24,10 +24,7 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         for touch : AnyObject in touches {
-            var touchLocation = touch.locationInNode(self)
-            
-            let transition = SKTransition.revealWithDirection(SKTransitionDirection.Up, duration: 1.0)
-            self.view!.presentScene(self.mapScene)
+            let mapView = self.view!
         }
         
     }
