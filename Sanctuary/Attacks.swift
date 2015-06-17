@@ -103,7 +103,7 @@ class Attack : AttackProtocol {
     }
     
     static func SwordAttack() -> Attack {
-        var attack = Attack(name: "Sword Attack", sound: "Sword3.wav", power: 40)
+        var attack = Attack(name: "Sword Attack", sound: "Sword3.wav", power: 50)
         return attack
     }
     
@@ -111,4 +111,16 @@ class Attack : AttackProtocol {
         var attack = Attack(name: "Spear Thrust", sound: "Wind7.wav", power: 100)
         return attack
     }
+    
+    static func LifeSteal() -> Attack {
+        var attack = Attack(name: "Life Steal", sound: "Decision2.wav", power: 30)
+        return attack
+    }
+    
+    static func Firebolt() -> Attack {
+        var attack = Attack(name: "Firebolt", sound: "", power: 50)
+        return attack
+    }
+    
+    
 }

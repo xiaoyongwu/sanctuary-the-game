@@ -21,7 +21,7 @@ class Player : Actor {
     var movement : PlayerMovement
     var sprite : SKSpriteNode
     
-    var attacks = [Attack.SpearThrust]
+    var attacks = [Attack.SpearThrust, Attack.SwordAttack]
     
     init (name : String) {
         self.exp = 0
@@ -64,7 +64,7 @@ class Player : Actor {
 
     }
     
-    func update() {
+    func update(scene : MapScene) {
         if showCollisionRect {
             self.sprite.removeAllChildren()
             var box = SKShapeNode()
@@ -75,8 +75,9 @@ class Player : Actor {
             self.sprite.addChild(box)
         }
         self.move()
-        
         // Implement collision logics
+        let layer_meta = scene.map.layerNamed("meta")
+        scene.collide(layer_meta)
         
         checkMovementDirection()
         self.position = self.targetPosition
@@ -140,6 +141,11 @@ class Player : Actor {
     
     func give_points() {
         self.freepoints += Game.POINTS_PER_LEVEL
+        self.atk += Int.random(1...5)
+        self.def += Int.random(1...5)
+        self.spd += Int.random(1...5)
+        self.hp += Int.random(5...10)
+        self.cur_hp = self.hp
     }
     
     func levelup(exp : Int) -> Bool {

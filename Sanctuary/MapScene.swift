@@ -108,6 +108,7 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
                 
                 if !CGRectIsNull(intersection) {
                     // Do we move the player horizontally or vertically?
+                    
                     var resolveVertically = offset.x == 0 || (offset.y != 0 && intersection.size.height < intersection.size.width)
                     var positionAdjustment = CGPointZero
                     
@@ -131,12 +132,18 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func checkEncounter() -> Monster? {
-        if let mob_gid = getPlayerInZone() as? Int {
+        var zone = self.getPlayerInZone()
+        if zone == nil {
+            return nil
+        }
+        
+        if let mob_gid = zone!.mob_gid as? Int {
             if mob_gid != 0 {
                 var monsterGroup = mobGroups[mob_gid]
-                let battle_monster = arc4random_uniform(150)
-                if(battle_monster < 1){
-                    var monster = monsterGroup?.getRandomMonster(1.0)
+                let battle_monster = Int.random(1...150)
+                let encounter_rate = zone!.encounter_rate
+                if(battle_monster < encounter_rate){
+                    var monster = monsterGroup?.getRandomMonster()
                     return monster
                 }
             }
@@ -144,14 +151,14 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         return nil
     }
     
-    func getPlayerInZone() -> Int {
+    func getPlayerInZone() -> Zone? {
         for zone in zones {
             if zone.isIn(game.player.position) {
-                return zone.mob_gid
+                return zone
             }
         }
         
-        return 0
+        return nil
     }
     
     func getZoneRects () {
@@ -169,7 +176,12 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
                     let mid = zone.valueForKey("mob_gid") as! NSString
                     let mob_gid = mid.integerValue
                     var rect = CGRectMake(x, y, CGFloat(width), CGFloat(height))
-                    let newZone = Zone(rect: rect, name: name, m_gid: mob_gid)
+                    var er = zone.valueForKey("encounter_rate") as? NSString
+                    var encounter_rate = 1
+                    if er != nil {
+                        encounter_rate = er!.integerValue
+                    }
+                    let newZone = Zone(rect: rect, name: name, m_gid: mob_gid, encounter_rate: encounter_rate)
                     self.zones.append(newZone)
                 }
             }
@@ -225,9 +237,7 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         // To add here if needed
         
         // Move player
-        let layer_meta = map.layerNamed("meta")
-        game.player.update()
-        collide(layer_meta)
+        game.player.update(self)
         if (game.player.position != game.player.targetLocation) {
             if let monster = checkEncounter() as Monster! {
                 game.player.stopMoving()
