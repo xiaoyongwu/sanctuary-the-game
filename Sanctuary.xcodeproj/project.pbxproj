@@ -35,6 +35,21 @@
 		36D08EF01B28CA0000EAB550 /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D08EEF1B28CA0000EAB550 /* Zone.swift */; };
 		36D08EF21B2A141500EAB550 /* CombatProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D08EF11B2A141500EAB550 /* CombatProtocol.swift */; };
 		36D08EF41B2A22FB00EAB550 /* Attacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D08EF31B2A22FB00EAB550 /* Attacks.swift */; };
+		36D257561B318C0C0086F4E1 /* 002-Battle02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 36D256711B318C0C0086F4E1 /* 002-Battle02.mp3 */; };
+		36D257571B318C0C0086F4E1 /* Battle 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 36D256721B318C0C0086F4E1 /* Battle 2.mp3 */; };
+		36D257581B318C0C0086F4E1 /* boss battle 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 36D256731B318C0C0086F4E1 /* boss battle 1.mp3 */; };
+		36D257591B318C0C0086F4E1 /* Forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 36D256741B318C0C0086F4E1 /* Forest.mp3 */; };
+		36D2575A1B318C0C0086F4E1 /* main theme 5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 36D256751B318C0C0086F4E1 /* main theme 5.mp3 */; };
+		36D2575B1B318C0C0086F4E1 /* Opening 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 36D256761B318C0C0086F4E1 /* Opening 4.mp3 */; };
+		36D2575C1B318C0C0086F4E1 /* Bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36D256781B318C0C0086F4E1 /* Bell.wav */; };
+		36D2575D1B318C0C0086F4E1 /* Bite.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36D256791B318C0C0086F4E1 /* Bite.wav */; };
+		36D2575E1B318C0C0086F4E1 /* Decision2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36D2567A1B318C0C0086F4E1 /* Decision2.wav */; };
+		36D2575F1B318C0C0086F4E1 /* Escape.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36D2567B1B318C0C0086F4E1 /* Escape.wav */; };
+		36D257601B318C0C0086F4E1 /* Evade1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36D2567C1B318C0C0086F4E1 /* Evade1.wav */; };
+		36D257611B318C0C0086F4E1 /* Evade2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36D2567D1B318C0C0086F4E1 /* Evade2.wav */; };
+		36D257621B318C0C0086F4E1 /* Slash8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36D2567E1B318C0C0086F4E1 /* Slash8.wav */; };
+		36D257631B318C0C0086F4E1 /* Sword3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36D2567F1B318C0C0086F4E1 /* Sword3.wav */; };
+		36D257641B318C0C0086F4E1 /* Wind7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36D256801B318C0C0086F4E1 /* Wind7.wav */; };
 		36D62BE31B126706006060A4 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D62BE21B126705006060A4 /* GameOver.swift */; };
 		36D62BE51B126AC3006060A4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D62BE41B126AC3006060A4 /* Extensions.swift */; };
 		36FE3A581B26A09000AF6F0B /* CombatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FE3A571B26A09000AF6F0B /* CombatScene.swift */; };
@@ -86,6 +101,21 @@
 		36D08EEF1B28CA0000EAB550 /* Zone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
 		36D08EF11B2A141500EAB550 /* CombatProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatProtocol.swift; sourceTree = "<group>"; };
 		36D08EF31B2A22FB00EAB550 /* Attacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attacks.swift; sourceTree = "<group>"; };
+		36D256711B318C0C0086F4E1 /* 002-Battle02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "002-Battle02.mp3"; sourceTree = "<group>"; };
+		36D256721B318C0C0086F4E1 /* Battle 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Battle 2.mp3"; sourceTree = "<group>"; };
+		36D256731B318C0C0086F4E1 /* boss battle 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "boss battle 1.mp3"; sourceTree = "<group>"; };
+		36D256741B318C0C0086F4E1 /* Forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Forest.mp3; sourceTree = "<group>"; };
+		36D256751B318C0C0086F4E1 /* main theme 5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "main theme 5.mp3"; sourceTree = "<group>"; };
+		36D256761B318C0C0086F4E1 /* Opening 4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Opening 4.mp3"; sourceTree = "<group>"; };
+		36D256781B318C0C0086F4E1 /* Bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Bell.wav; sourceTree = "<group>"; };
+		36D256791B318C0C0086F4E1 /* Bite.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Bite.wav; sourceTree = "<group>"; };
+		36D2567A1B318C0C0086F4E1 /* Decision2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Decision2.wav; sourceTree = "<group>"; };
+		36D2567B1B318C0C0086F4E1 /* Escape.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Escape.wav; sourceTree = "<group>"; };
+		36D2567C1B318C0C0086F4E1 /* Evade1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Evade1.wav; sourceTree = "<group>"; };
+		36D2567D1B318C0C0086F4E1 /* Evade2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Evade2.wav; sourceTree = "<group>"; };
+		36D2567E1B318C0C0086F4E1 /* Slash8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Slash8.wav; sourceTree = "<group>"; };
+		36D2567F1B318C0C0086F4E1 /* Sword3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sword3.wav; sourceTree = "<group>"; };
+		36D256801B318C0C0086F4E1 /* Wind7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Wind7.wav; sourceTree = "<group>"; };
 		36D62BE21B126705006060A4 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		36D62BE41B126AC3006060A4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		36FE3A571B26A09000AF6F0B /* CombatScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatScene.swift; sourceTree = "<group>"; };
@@ -204,6 +234,7 @@
 		3655CF5E1B0F6563000BA0F1 /* Sanctuary */ = {
 			isa = PBXGroup;
 			children = (
+				36D255901B318C0C0086F4E1 /* Resources */,
 				364312581B1F7AC30072105C /* Pathfinding */,
 				36871E9E1B166FFB000DCC18 /* APIs */,
 				365100F41B16253B00A165E3 /* Libs */,
@@ -256,6 +287,44 @@
 				36871EA21B16700E000DCC18 /* LFCGzipUtility.m */,
 			);
 			name = APIs;
+			sourceTree = "<group>";
+		};
+		36D255901B318C0C0086F4E1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				36D256701B318C0C0086F4E1 /* Music */,
+				36D256771B318C0C0086F4E1 /* Sounds */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		36D256701B318C0C0086F4E1 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				36D256711B318C0C0086F4E1 /* 002-Battle02.mp3 */,
+				36D256721B318C0C0086F4E1 /* Battle 2.mp3 */,
+				36D256731B318C0C0086F4E1 /* boss battle 1.mp3 */,
+				36D256741B318C0C0086F4E1 /* Forest.mp3 */,
+				36D256751B318C0C0086F4E1 /* main theme 5.mp3 */,
+				36D256761B318C0C0086F4E1 /* Opening 4.mp3 */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		36D256771B318C0C0086F4E1 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				36D256781B318C0C0086F4E1 /* Bell.wav */,
+				36D256791B318C0C0086F4E1 /* Bite.wav */,
+				36D2567A1B318C0C0086F4E1 /* Decision2.wav */,
+				36D2567B1B318C0C0086F4E1 /* Escape.wav */,
+				36D2567C1B318C0C0086F4E1 /* Evade1.wav */,
+				36D2567D1B318C0C0086F4E1 /* Evade2.wav */,
+				36D2567E1B318C0C0086F4E1 /* Slash8.wav */,
+				36D2567F1B318C0C0086F4E1 /* Sword3.wav */,
+				36D256801B318C0C0086F4E1 /* Wind7.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,17 +407,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36D2575A1B318C0C0086F4E1 /* main theme 5.mp3 in Resources */,
 				362AC0C01B14E0FC002B9690 /* player_movement.1.png in Resources */,
+				36D257591B318C0C0086F4E1 /* Forest.mp3 in Resources */,
+				36D257631B318C0C0086F4E1 /* Sword3.wav in Resources */,
+				36D257621B318C0C0086F4E1 /* Slash8.wav in Resources */,
+				36D257561B318C0C0086F4E1 /* 002-Battle02.mp3 in Resources */,
+				36D2575B1B318C0C0086F4E1 /* Opening 4.mp3 in Resources */,
+				36D257581B318C0C0086F4E1 /* boss battle 1.mp3 in Resources */,
+				36D257571B318C0C0086F4E1 /* Battle 2.mp3 in Resources */,
 				36871EB31B1670EA000DCC18 /* town.tmx in Resources */,
 				3655CF701B0F6563000BA0F1 /* LaunchScreen.xib in Resources */,
 				364312631B1F87F00072105C /* obj_misk_atlas.png in Resources */,
 				3655CF6D1B0F6563000BA0F1 /* Images.xcassets in Resources */,
+				36D257611B318C0C0086F4E1 /* Evade2.wav in Resources */,
+				36D257601B318C0C0086F4E1 /* Evade1.wav in Resources */,
+				36D2575D1B318C0C0086F4E1 /* Bite.wav in Resources */,
 				364312641B1F87F00072105C /* terrain_atlas.png in Resources */,
+				36D2575F1B318C0C0086F4E1 /* Escape.wav in Resources */,
 				362AC0C11B14E0FC002B9690 /* player_movement.plist in Resources */,
 				364312621B1F87F00072105C /* meta_tiles.png in Resources */,
 				3655CF641B0F6563000BA0F1 /* GameScene.sks in Resources */,
 				364312611B1F87F00072105C /* build_atlas.png in Resources */,
+				36D2575C1B318C0C0086F4E1 /* Bell.wav in Resources */,
+				36D257641B318C0C0086F4E1 /* Wind7.wav in Resources */,
 				3655CF6B1B0F6563000BA0F1 /* Main.storyboard in Resources */,
+				36D2575E1B318C0C0086F4E1 /* Decision2.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,9 +25,6 @@
                 </imageView>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Heroes" translatesAutoresizingMaskIntoConstraints="NO" id="OGy-yy-7XT">
                     <rect key="frame" x="0.0" y="-416" width="544" height="416"/>
-                    <variation key="heightClass=compact" misplaced="YES">
-                        <rect key="frame" x="28" y="-8" width="544" height="416"/>
-                    </variation>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 bertoche. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
                     <rect key="frame" x="20" y="559" width="561" height="21"/>

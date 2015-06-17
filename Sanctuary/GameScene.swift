@@ -11,21 +11,17 @@ import SpriteKit
 class GameScene: MapScene {
     
     override func didMoveToView(view: SKView) {
+        /* Setup your scene here */
         self.mapName = "town.tmx"
-        game = Game(view: view, scene: self)
         
-        var mGroup1 = MonstersGroup(monsters: [Monster(name: "Spider")])
+        var mGroup1 = MonstersGroup(monsters: [Monster.Spider, Monster.Bandit])
         var mobGroups = [
             1: mGroup1
         ]
         self.setMonsterGroups(mobGroups)
-        /* Setup your scene here */
-        setupScene()
+        
+        super.didMoveToView(view)
     }
     
     
 }
-
-
-
-

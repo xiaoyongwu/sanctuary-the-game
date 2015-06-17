@@ -9,9 +9,8 @@
 import Foundation
 
 class Player : Actor {
-    var exp, level : Int
+    var exp : Int
     var freepoints : Int
-    var cur_hp : Int
     var velocity : CGVector?
     var targetLocation : CGPoint!
     var targetPosition : CGPoint!
@@ -20,16 +19,16 @@ class Player : Actor {
     var movement : PlayerMovement
     var sprite : SKSpriteNode
     
+    var attacks = [Attack.SpearThrust]
+    
     init (name : String) {
         self.exp = 0
-        self.level = 1
         self.freepoints = 0
-        self.cur_hp = 20
         
         self.movement = PlayerMovement()
         self.sprite = SKSpriteNode(texture: self.movement.movement_frame60())
         
-        super.init(name: name, atk: 5, def: 5, spd: 5, hp : 20, stam : 10)
+        super.init(name: name, level: 1, atk: 25, def: 15, spd: 5, hp : 80, stam : 10)
     }
     
     func collisionRectAtTarget() -> CGRect {
@@ -114,6 +113,13 @@ class Player : Actor {
     
     func stopMoving() {
         self.targetLocation = self.position
+    }
+    
+    func attack(target : Actor) -> Bool {
+        var attack = self.attacks[Int.random(0...attacks.count-1)]()
+        var killed = attack.perform(target, attacker: self)
+        
+        return killed
     }
     
     var position : CGPoint {

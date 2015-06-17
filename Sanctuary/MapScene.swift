@@ -10,7 +10,6 @@ import SpriteKit
 
 class MapScene: SKScene, SKPhysicsContactDelegate {
     var lastMenuPosition = 0
-    var game : Game?
     
     var mapName = ""
     var map:JSTileMap! //= JSTileMap(named: "town.tmx")
@@ -18,8 +17,6 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
     var camera = SKNode()
     var overlay = SKNode()
     var zones = [Zone]()
-    var player = Player(name: "Aer")
-    var monster : Monster?
     var mobGroups = [Int: MonstersGroup]()
     
     func setMonsterGroups (mob_groups : [Int: MonstersGroup]) {
@@ -31,7 +28,7 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMoveToView(view: SKView) {
-        game = Game(view: view, scene: self)
+        game.enterScene(self)
         /* Setup your scene here */
         setupScene()
     }
@@ -52,7 +49,7 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
     
     func getPlayerInZone() -> Int {
         for zone in zones {
-            if zone.isIn(self.player.position) {
+            if zone.isIn(game.player.position) {
                 return zone.mob_gid
             }
         }
@@ -113,9 +110,9 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         self.map.addChild(camera)
         
         // Set up player
-        self.player.position = getMarkerPosition("startpoint")
-        self.player.targetLocation = self.player.position
-        self.map.addChild(self.player.sprite)
+        let mapStartPoint = getMarkerPosition("startpoint")
+        game.setPlayerMapPosition(self.mapName, position: mapStartPoint)
+        self.map.addChild(game.player.sprite)
         
     }
     
@@ -131,17 +128,16 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         // To add here if needed
         
         // Move player
-        self.player.update()
-        if (self.player.position != self.player.targetLocation) {
+        game.player.update()
+        if (game.player.position != game.player.targetLocation) {
             if let monster = checkEncounter() as Monster! {
-                player.stopMoving()
-                self.monster = monster
+                game.player.stopMoving()
+                game.monster = monster
                 // let combat_alert = UIAlertView(title: monster.name, message: "Found", delegate: nil, cancelButtonTitle: "Close")
                 // combat_alert.show()
                 let transition = SKTransition.revealWithDirection(SKTransitionDirection.Down, duration: 1.0)
                 
                 let scene = CombatScene(size: self.size)
-                scene.mapScene = self
                 scene.scaleMode = SKSceneScaleMode.AspectFill
                 
                 self.view!.presentScene(scene, transition: transition)
@@ -157,13 +153,13 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         for touch : AnyObject in touches {
             var touchLocation = touch.locationInNode(self.map)
-            self.player.targetLocation = touchLocation
+            game.player.targetLocation = touchLocation
         }
         
     }
     
     override func update(currentTime: CFTimeInterval) {
-        self.camera.position = CGPointMake(self.player.position.x, self.player.position.y)
+        self.camera.position = CGPointMake(game.player.position.x, game.player.position.y)
         
         /* Called before each frame is rendered */
         self.overlay.removeAllChildren()

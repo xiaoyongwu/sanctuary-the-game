@@ -11,6 +11,15 @@ import Foundation
 import SpriteKit
 import Darwin
 
+var game = Game(player : Player(name : "Player 1"))
+
+enum Scenary {
+    case Meadow
+    case Forest
+    case Desert
+    case Snow
+}
+
 class Game {
     static let POINTS_PER_LEVEL = 5
     enum ATTRS {
@@ -21,20 +30,45 @@ class Game {
         case stam
     }
     
-    var view : SKView
-    var current_scene : SKScene
+    // var view : SKView?
+    var current_scene : SKScene?
+    var player : Player
+    var monster : Monster?
+    var view : SKView?
     
-    init (view: SKView, scene: SKScene) {
-        self.view = view
+    var current_map = ""
+    
+    init (player: Player) {
+        self.player = player
+    }
+    
+    func enterScene(scene : SKScene) {
         self.current_scene = scene
+        self.view = scene.view!
+        if scene.isKindOfClass(MapScene.self) {
+            var mapScene = scene as! MapScene
+            self.current_map = mapScene.mapName
+        }
+    }
+    
+    func setPlayerMapPosition(map: String, position : CGPoint) {
+        if let current_position = self.player.targetLocation {
+            if map != self.current_map {
+                self.player.position = position
+                self.player.targetLocation = position
+            }
+        } else {
+            self.player.position = position
+            self.player.targetLocation = position
+        }
     }
     
     func gameover() {
-        let scene = GameOver(size: self.current_scene.size)
+        let scene = GameOver(size: self.current_scene!.size)
         scene.scaleMode = .ResizeFill
-        scene.size = self.view.bounds.size
+        scene.size = view!.bounds.size
         
-        self.view.presentScene(scene)
+        view!.presentScene(scene)
     }
 }
 
@@ -45,14 +79,28 @@ class Actor {
     var atk, def, spd : Int
     
     var hp, stam : Int
+    var cur_hp : Int
     
-    init (name : String, atk : Int, def : Int, spd : Int, hp : Int, stam : Int) {
+    var level : Int
+    
+    init (name : String, level: Int, atk : Int, def : Int, spd : Int, hp : Int, stam : Int) {
         self.name = name
+        self.level = level
         self.atk = atk
         self.def = def
         self.spd = spd
         self.hp = hp
+        self.cur_hp = self.hp
         self.stam = stam
+    }
+    
+    func isDead() -> Bool {
+        return cur_hp <= 0
+    }
+    
+    func doDamage(damage: Int) -> Bool {
+        cur_hp -= damage
+        return isDead()
     }
 }
 
