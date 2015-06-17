@@ -13,6 +13,13 @@ import Darwin
 
 var game = Game(player : Player(name : "Player 1"))
 
+enum Directions {
+    case up
+    case down
+    case left
+    case right
+}
+
 enum Scenary {
     case Meadow
     case Forest

@@ -73,11 +73,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Game.swift"
-            timestampString = "456184788.888599"
+            timestampString = "456234000.816119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "Actor"
             landmarkType = "3">
          </BreakpointContent>
@@ -137,11 +137,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456171390.614678"
+            timestampString = "456234903.829232"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "move()"
             landmarkType = "5">
          </BreakpointContent>
@@ -153,11 +153,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456171390.614678"
+            timestampString = "456234903.829232"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "move()"
             landmarkType = "5">
          </BreakpointContent>
@@ -169,11 +169,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456171390.614678"
+            timestampString = "456234903.829232"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "move()"
             landmarkType = "5">
          </BreakpointContent>
@@ -185,11 +185,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456171390.614678"
+            timestampString = "456234903.829232"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "move()"
             landmarkType = "5">
          </BreakpointContent>
@@ -201,11 +201,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456171390.614678"
+            timestampString = "456234903.829232"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "move()"
             landmarkType = "5">
          </BreakpointContent>
@@ -313,11 +313,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Game.swift"
-            timestampString = "456184788.888599"
+            timestampString = "456234000.816119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "enterScene(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -393,11 +393,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456185176.813735"
+            timestampString = "456234903.829232"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "update()"
             landmarkType = "5">
          </BreakpointContent>
@@ -409,11 +409,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456185198.305885"
+            timestampString = "456234903.829232"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "move()"
             landmarkType = "5">
          </BreakpointContent>
@@ -425,11 +425,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456185205.090413"
+            timestampString = "456234903.829232"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "move()"
             landmarkType = "5">
          </BreakpointContent>
@@ -441,11 +441,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456185325.290562"
+            timestampString = "456234903.829232"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "move()"
             landmarkType = "5">
          </BreakpointContent>
@@ -473,7 +473,7 @@
                   moduleName = "Sanctuary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/urielbertoche/Works/sanctuary-the-game/Sanctuary/Attacks.swift"
-                  timestampString = "456232115.8508"
+                  timestampString = "456235025.297082"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -488,7 +488,7 @@
                   moduleName = "Sanctuary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/urielbertoche/Works/sanctuary-the-game/Sanctuary/Attacks.swift"
-                  timestampString = "456232115.850951"
+                  timestampString = "456235025.297239"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -503,7 +503,7 @@
                   moduleName = "Sanctuary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/urielbertoche/Works/sanctuary-the-game/Sanctuary/Attacks.swift"
-                  timestampString = "456232115.851099"
+                  timestampString = "456235025.297386"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "51"
@@ -518,7 +518,7 @@
                   moduleName = "Sanctuary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/urielbertoche/Works/sanctuary-the-game/Sanctuary/Attacks.swift"
-                  timestampString = "456232115.851239"
+                  timestampString = "456235025.299406"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "51"
@@ -533,7 +533,7 @@
                   moduleName = "Sanctuary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/urielbertoche/Works/sanctuary-the-game/Sanctuary/Attacks.swift"
-                  timestampString = "456232115.851444"
+                  timestampString = "456235025.299575"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "51"
@@ -541,6 +541,22 @@
                   offsetFromSymbolStart = "17">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sanctuary/Sprites/player_movement.swift"
+            timestampString = "456234000.816119"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "movement(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

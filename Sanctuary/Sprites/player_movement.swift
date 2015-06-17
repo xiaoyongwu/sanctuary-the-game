@@ -90,7 +90,60 @@ class PlayerMovement {
     func movement_frame93() -> SKTexture { return textureAtlas.textureNamed(MOVEMENT_FRAME93) }
     func movement_frame94() -> SKTexture { return textureAtlas.textureNamed(MOVEMENT_FRAME94) }
     func movement_frame95() -> SKTexture { return textureAtlas.textureNamed(MOVEMENT_FRAME95) }
-
+    
+    func movement(direction: Directions) -> [SKTexture] {
+        let texture_array = [
+            Directions.up: [
+                movement_frame60(),
+                movement_frame61(),
+                movement_frame62(),
+                movement_frame63(),
+                movement_frame64(),
+                movement_frame65(),
+                movement_frame66(),
+                movement_frame67(),
+                movement_frame68()
+            ],
+            
+            Directions.left: [
+                movement_frame69(),
+                movement_frame70(),
+                movement_frame71(),
+                movement_frame72(),
+                movement_frame73(),
+                movement_frame74(),
+                movement_frame75(),
+                movement_frame76(),
+                movement_frame77()
+            ],
+            
+            Directions.down: [
+                movement_frame78(),
+                movement_frame79(),
+                movement_frame80(),
+                movement_frame81(),
+                movement_frame82(),
+                movement_frame83(),
+                movement_frame84(),
+                movement_frame85(),
+                movement_frame86()
+            ],
+            
+            Directions.right: [
+                movement_frame87(),
+                movement_frame88(),
+                movement_frame89(),
+                movement_frame90(),
+                movement_frame91(),
+                movement_frame92(),
+                movement_frame93(),
+                movement_frame94(),
+                movement_frame95()
+            ]
+        ]
+        
+        return texture_array[direction]!
+    }
 
     // texture arrays for animations
     func movement_frame() -> [SKTexture] {

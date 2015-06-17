@@ -37,8 +37,8 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         if let mob_gid = getPlayerInZone() as? Int {
             if mob_gid != 0 {
                 var monsterGroup = mobGroups[mob_gid]
-                let battle_monster = arc4random_uniform(50)
-                if(battle_monster < 2){
+                let battle_monster = arc4random_uniform(150)
+                if(battle_monster < 1){
                     var monster = monsterGroup?.getRandomMonster(1.0)
                     return monster
                 }

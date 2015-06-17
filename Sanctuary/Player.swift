@@ -14,6 +14,8 @@ class Player : Actor {
     var velocity : CGVector?
     var targetLocation : CGPoint!
     var targetPosition : CGPoint!
+    var facingDirection : Directions = .down
+    var lastFacingDirection : Directions = .down
     var showCollisionRect : Bool = false
     
     var movement : PlayerMovement
@@ -26,7 +28,7 @@ class Player : Actor {
         self.freepoints = 0
         
         self.movement = PlayerMovement()
-        self.sprite = SKSpriteNode(texture: self.movement.movement_frame60())
+        self.sprite = SKSpriteNode(texture: self.movement.movement(facingDirection)[0])
         
         super.init(name: name, level: 1, atk: 25, def: 15, spd: 5, hp : 80, stam : 10)
     }
@@ -40,6 +42,26 @@ class Player : Actor {
         // Move rectangle to target position
         collisionRect = CGRectOffset(collisionRect, movement.x, movement.y - 2)
         return collisionRect
+    }
+    
+    func setMovementDirection(direction: Directions) {
+        lastFacingDirection = facingDirection
+        facingDirection = direction
+    }
+    
+    func checkMovementDirection() {
+        if targetPosition.x > position.x {
+            setMovementDirection(.right)
+        } else if targetPosition.x  < position.x {
+            setMovementDirection(.left)
+        }
+        
+        if targetPosition.y > position.y {
+            setMovementDirection(.up)
+        } else if targetPosition.y  < position.y {
+            setMovementDirection(.down)
+        }
+
     }
     
     func update() {
@@ -56,29 +78,55 @@ class Player : Actor {
         
         // Implement collision logics
         
+        checkMovementDirection()
         self.position = self.targetPosition
+    }
+    
+    func startWalking() {
+        if self.sprite.actionForKey("walkingPlayer") == nil {
+            self.sprite.runAction(SKAction.repeatActionForever(
+                SKAction.animateWithTextures(self.movement.movement(facingDirection),
+                    timePerFrame: 0.08,
+                    resize: false,
+                    restore: true)),
+                withKey:"walkingPlayer")
+        } else if lastFacingDirection != facingDirection {
+            stopWalking()
+            startWalking()
+        }
+    }
+    
+    func stopWalking() {
+        if self.sprite.actionForKey("walkingPlayer") != nil {
+            let endTexture = self.movement.movement(facingDirection)[0]
+            
+            self.sprite.removeActionForKey("walkingPlayer")
+            self.sprite.texture = endTexture
+        }
     }
     
     func move() {
         var targetExists = false
 
         
-        let vel = CGFloat(10)
+        let vel = CGFloat(6)
         let targetLocation = self.targetLocation
         let position = self.position
         self.targetPosition = position
         
         if targetLocation == position {
+            self.stopWalking()
             return
         } else {
+            self.startWalking()
         }
         
         self.velocity = CGVector()
         
         if position.x > targetLocation.x {
-           self.velocity!.dx = fmax(vel * CGFloat(-1), targetLocation.x - position.x)
+            self.velocity!.dx = fmax(vel * CGFloat(-1), targetLocation.x - position.x)
         } else {
-           self.velocity!.dx = fmin(vel, targetLocation.x - position.x)
+            self.velocity!.dx = fmin(vel, targetLocation.x - position.x)
         }
         
         if position.y > targetLocation.y {
