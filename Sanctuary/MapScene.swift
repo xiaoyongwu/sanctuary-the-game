@@ -140,9 +140,9 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         if let mob_gid = zone!.mob_gid as? Int {
             if mob_gid != 0 {
                 var monsterGroup = mobGroups[mob_gid]
-                let battle_monster = Int.random(1...150)
+                let battle_monster = Int.random(0...100)
                 let encounter_rate = zone!.encounter_rate
-                if(battle_monster < encounter_rate){
+                if(battle_monster <= encounter_rate){
                     var monster = monsterGroup?.getRandomMonster()
                     return monster
                 }

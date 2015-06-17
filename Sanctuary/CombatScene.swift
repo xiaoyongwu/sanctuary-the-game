@@ -144,16 +144,19 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
     }
     
     func attack() {
+        var ngame = game
         if game.player.spd > game.monster!.spd {
             game.player.attack(game.monster!)
-            checkLiving()
-            game.monster!.attack(game.player)
-            checkLiving()
+            if (game.monster!.isDead() == false) {
+                game.monster!.attack(game.player)
+                checkLiving()
+            }
         } else {
             game.monster!.attack(game.player)
-            checkLiving()
-            game.player.attack(game.monster!)
-            checkLiving()
+            if (game.player.isDead() == false) {
+                game.player.attack(game.monster!)
+                checkLiving()
+            }
         }
     }
     
