@@ -30,7 +30,7 @@ class Player : Actor {
         self.movement = PlayerMovement()
         self.sprite = SKSpriteNode(texture: self.movement.movement(facingDirection)[0])
         
-        super.init(name: name, level: 1, atk: 25, def: 15, spd: 5, hp : 1, stam : 10)
+        super.init(name: name, level: 1, atk: 25, def: 15, spd: 5, hp : 50, stam : 10)
     }
     
     func collisionRectAtTarget() -> CGRect {

@@ -37,6 +37,7 @@ class Game {
         case stam
     }
     
+    let encounter_base = 200
     // var view : SKView?
     var current_scene : SKScene?
     var player : Player

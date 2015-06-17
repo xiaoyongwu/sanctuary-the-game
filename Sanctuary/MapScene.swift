@@ -140,7 +140,7 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         if let mob_gid = zone!.mob_gid as? Int {
             if mob_gid != 0 {
                 var monsterGroup = mobGroups[mob_gid]
-                let battle_monster = Int.random(0...100)
+                let battle_monster = Int.random(0...game.encounter_base)
                 let encounter_rate = zone!.encounter_rate
                 if(battle_monster <= encounter_rate){
                     var monster = monsterGroup?.getRandomMonster()
@@ -275,11 +275,13 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         self.overlay.removeAllChildren()
         updateView()
         
+        /*
         var coordinates = self.camera.position
         // coordinates = self.map.position
         let coord_label = SKLabelNode(text: "x: \(coordinates.x) y: \(coordinates.y)")
         coord_label.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
         self.overlay.addChild(coord_label)
+        */
     }
 }
 
