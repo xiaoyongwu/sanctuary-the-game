@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3608767C1B124CBD001529F9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3608767B1B124CBD001529F9 /* Game.swift */; };
+		361E803E1B31FDF20071AB50 /* GGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361E803D1B31FDF10071AB50 /* GGButton.swift */; };
 		362AC0C01B14E0FC002B9690 /* player_movement.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 362AC0BD1B14E0FC002B9690 /* player_movement.1.png */; };
 		362AC0C11B14E0FC002B9690 /* player_movement.plist in Resources */ = {isa = PBXBuildFile; fileRef = 362AC0BE1B14E0FC002B9690 /* player_movement.plist */; };
 		362AC0C21B14E0FC002B9690 /* player_movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362AC0BF1B14E0FC002B9690 /* player_movement.swift */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		3608767B1B124CBD001529F9 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		361E803D1B31FDF10071AB50 /* GGButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGButton.swift; sourceTree = "<group>"; };
 		362AC0BD1B14E0FC002B9690 /* player_movement.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player_movement.1.png; sourceTree = "<group>"; };
 		362AC0BE1B14E0FC002B9690 /* player_movement.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = player_movement.plist; sourceTree = "<group>"; };
 		362AC0BF1B14E0FC002B9690 /* player_movement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = player_movement.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				36D62BE41B126AC3006060A4 /* Extensions.swift */,
+				361E803D1B31FDF10071AB50 /* GGButton.swift */,
 			);
 			name = Libs;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				36871EA31B16700E000DCC18 /* JSTileMap.m in Sources */,
 				36D08EF41B2A22FB00EAB550 /* Attacks.swift in Sources */,
 				36871EA41B16700E000DCC18 /* LFCGzipUtility.m in Sources */,
+				361E803E1B31FDF20071AB50 /* GGButton.swift in Sources */,
 				36D62BE51B126AC3006060A4 /* Extensions.swift in Sources */,
 				36FE3A581B26A09000AF6F0B /* CombatScene.swift in Sources */,
 				36CF08E71B20E1A300E0BA09 /* MapScene.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import AVFoundation
 
 class MapScene: SKScene, SKPhysicsContactDelegate {
     var lastMenuPosition = 0
@@ -18,6 +19,35 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
     var overlay = SKNode()
     var zones = [Zone]()
     var mobGroups = [Int: MonstersGroup]()
+    
+    var backgroundMusicPlayer: AVAudioPlayer!
+    
+    func playMusic(filename: String, loop: Bool = false) {
+        let url = NSBundle.mainBundle().URLForResource(
+            filename, withExtension: nil)
+        if (url == nil) {
+            println("Could not find file: \(filename)")
+            return
+        }
+        
+        var error: NSError? = nil
+        backgroundMusicPlayer =
+            AVAudioPlayer(contentsOfURL: url, error: &error)
+        if backgroundMusicPlayer == nil {
+            println("Could not create audio player: \(error!)")
+            return
+        }
+        
+        var numberOfLoops = 0
+        if loop {
+            numberOfLoops = -1
+        }
+        
+        backgroundMusicPlayer.volume = 0.1
+        backgroundMusicPlayer.numberOfLoops = numberOfLoops
+        backgroundMusicPlayer.prepareToPlay()
+        backgroundMusicPlayer.play()
+    }
     
     func setMonsterGroups (mob_groups : [Int: MonstersGroup]) {
         mobGroups = mob_groups
@@ -31,6 +61,73 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         game.enterScene(self)
         /* Setup your scene here */
         setupScene()
+    }
+    
+    func validTileCoord(tileCoord: CGPoint) -> Bool {
+        return tileCoord.x >= 0
+            && tileCoord.y >= 0
+            && tileCoord.x <= self.map.mapSize.width
+            && tileCoord.y <= self.map.mapSize.height
+    }
+    
+    func rectForTileCoord(coord: CGPoint) -> CGRect {
+        var x = coord.x * self.map.tileSize.width
+        var mapHeight = self.map.mapSize.height * self.map.tileSize.height
+        var y = mapHeight - ((coord.y + 1) * self.map.tileSize.height)
+        
+        return CGRectMake(x, y, self.map.tileSize.width, self.map.tileSize.height);
+    }
+    
+    func collide(layer : TMXLayer) {
+        var coordOffsets = [
+            CGPointMake(0,1),
+            CGPointMake(0,-1),
+            CGPointMake(1,0),
+            CGPointMake(-1,0),
+            CGPointMake(1,-1),
+            CGPointMake(-1,-1),
+            CGPointMake(1,1),
+            CGPointMake(-1,1)
+        ]
+        
+        var playerCoord = layer.coordForPoint(game.player.targetPosition)
+        
+        // loop through tiles around player
+        for tile : CGPoint in coordOffsets {
+            // Get player collision rectangle
+            let playerRect = game.player.collisionRectAtTarget()
+            // Get tile coordinate
+            let offset = tile
+            let tileCoord = CGPointMake(playerCoord.x + offset.x, playerCoord.y + offset.y)
+            
+            let gid = layer.layerInfo.tileGidAtCoord(tileCoord)
+            
+            if gid != 0 {
+                // Get intersection between player rect and tile
+                var intersection = CGRectIntersection(playerRect, self.rectForTileCoord(tileCoord))
+                
+                if !CGRectIsNull(intersection) {
+                    // Do we move the player horizontally or vertically?
+                    var resolveVertically = offset.x == 0 || (offset.y != 0 && intersection.size.height < intersection.size.width)
+                    var positionAdjustment = CGPointZero
+                    
+                    //if resolveVertically {
+                        // Calculate the distance we need to move the player.
+                        positionAdjustment.y = intersection.size.height * offset.y;
+                        // Stop player moving vertically.
+                        //game.player.velocity = CGVectorMake(game.player.velocity!.dx, 0);
+                    //} else {
+                        // Calculate the distance we need to move the player.
+                        positionAdjustment.x = intersection.size.width * -offset.x;
+                        // Stop player moving horizontally.
+                        //game.player.velocity = CGVectorMake(0, game.player.velocity!.dy);
+                    //}
+                    game.player.targetPosition = CGPointMake(game.player.targetPosition.x + positionAdjustment.x,
+                        game.player.targetPosition.y + positionAdjustment.y);
+                    
+                }
+            }
+        }
     }
     
     func checkEncounter() -> Monster? {
@@ -128,10 +225,13 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         // To add here if needed
         
         // Move player
+        let layer_meta = map.layerNamed("meta")
         game.player.update()
+        collide(layer_meta)
         if (game.player.position != game.player.targetLocation) {
             if let monster = checkEncounter() as Monster! {
                 game.player.stopMoving()
+                backgroundMusicPlayer.stop()
                 game.monster = monster
                 // let combat_alert = UIAlertView(title: monster.name, message: "Found", delegate: nil, cancelButtonTitle: "Close")
                 // combat_alert.show()

@@ -9,34 +9,6 @@
 import Foundation
 import AVFoundation
 
-var backgroundMusicPlayer: AVAudioPlayer!
-
-func playMusic(filename: String, loop: Bool = false) {
-    let url = NSBundle.mainBundle().URLForResource(
-        filename, withExtension: nil)
-    if (url == nil) {
-        println("Could not find file: \(filename)")
-        return
-    }
-    
-    var error: NSError? = nil
-    backgroundMusicPlayer =
-        AVAudioPlayer(contentsOfURL: url, error: &error)
-    if backgroundMusicPlayer == nil {
-        println("Could not create audio player: \(error!)")
-        return
-    }
-    
-    var numberOfLoops = 1
-    if loop {
-        numberOfLoops = -1
-    }
-    
-    backgroundMusicPlayer.numberOfLoops = numberOfLoops
-    backgroundMusicPlayer.prepareToPlay()
-    backgroundMusicPlayer.play()
-}
-
 protocol AttackProtocol {
     var name : String { get set }
     var sound : String { get set }
@@ -51,6 +23,34 @@ class Attack : AttackProtocol {
     var name : String
     var sound : String
     var power : Int
+    
+    var soundEffects: AVAudioPlayer!
+    
+    func playMusic(filename: String, loop: Bool = false) {
+        let url = NSBundle.mainBundle().URLForResource(
+            filename, withExtension: nil)
+        if (url == nil) {
+            println("Could not find file: \(filename)")
+            return
+        }
+        
+        var error: NSError? = nil
+        soundEffects =
+            AVAudioPlayer(contentsOfURL: url, error: &error)
+        if soundEffects == nil {
+            println("Could not create audio player: \(error!)")
+            return
+        }
+        
+        var numberOfLoops = 0
+        if loop {
+            numberOfLoops = -1
+        }
+        
+        soundEffects.numberOfLoops = numberOfLoops
+        soundEffects.prepareToPlay()
+        soundEffects.play()
+    }
     
     init (name : String, sound : String, power : Int) {
         self.name = name
@@ -78,13 +78,16 @@ class Attack : AttackProtocol {
         let damage = Int(base_damage * modifier)
         
         let isDead = target.doDamage(damage)
+        
+        game.combat_log += "\(attacker.name) used \(self.name) on \(target.name) dealing \(damage) damage.\n"
  
         return isDead
     }
     
     func animate() {
         if self.sound != "" {
-            playMusic(self.sound)
+            self.playMusic(self.sound)
+            sleep(1)
         }
     }
     

@@ -13,6 +13,7 @@ class GameScene: MapScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         self.mapName = "town.tmx"
+        playMusic("Opening 4.mp3", loop: true)
         
         var mGroup1 = MonstersGroup(monsters: [Monster.Spider, Monster.Bandit])
         var mobGroups = [

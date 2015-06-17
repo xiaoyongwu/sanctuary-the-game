@@ -73,11 +73,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Game.swift"
-            timestampString = "456234000.816119"
+            timestampString = "456260488.208465"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "Actor"
             landmarkType = "3">
          </BreakpointContent>
@@ -89,11 +89,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/MapScene.swift"
-            timestampString = "456084972.643605"
+            timestampString = "456266531.853275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "updateView()"
             landmarkType = "5">
          </BreakpointContent>
@@ -105,11 +105,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/MapScene.swift"
-            timestampString = "456084972.643605"
+            timestampString = "456266531.853275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "updateView()"
             landmarkType = "5">
          </BreakpointContent>
@@ -121,11 +121,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/MapScene.swift"
-            timestampString = "456084972.643605"
+            timestampString = "456266531.853275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "getMarkerPosition(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -137,7 +137,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456234903.829232"
+            timestampString = "456266531.853275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "129"
@@ -153,7 +153,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456234903.829232"
+            timestampString = "456266531.853275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "127"
@@ -169,7 +169,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456234903.829232"
+            timestampString = "456266531.853275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
@@ -185,7 +185,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456234903.829232"
+            timestampString = "456266531.853275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
@@ -201,7 +201,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456234903.829232"
+            timestampString = "456266531.853275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "138"
@@ -216,28 +216,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Sanctuary/CombatScene.swift"
-            timestampString = "456232115.547442"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "touchesBegan(_:withEvent:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Sanctuary/MapScene.swift"
-            timestampString = "456084972.643605"
+            timestampString = "456266531.853275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "updateView()"
             landmarkType = "5">
          </BreakpointContent>
@@ -249,11 +233,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/MapScene.swift"
-            timestampString = "456084972.643605"
+            timestampString = "456266531.853275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "getZoneRects()"
             landmarkType = "5">
          </BreakpointContent>
@@ -265,11 +249,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/CombatScene.swift"
-            timestampString = "456232115.547442"
+            timestampString = "456263479.689662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "drawBattledrop(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -297,11 +281,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Attacks.swift"
-            timestampString = "456232115.547442"
+            timestampString = "456253790.962964"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "perform(_:attacker:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -313,11 +297,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Game.swift"
-            timestampString = "456234000.816119"
+            timestampString = "456260488.208465"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "enterScene(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -329,11 +313,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/CombatScene.swift"
-            timestampString = "456232115.547442"
+            timestampString = "456264696.396466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "attack()"
             landmarkType = "5">
          </BreakpointContent>
@@ -345,11 +329,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/CombatScene.swift"
-            timestampString = "456232115.547442"
+            timestampString = "456264696.396466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "attack()"
             landmarkType = "5">
          </BreakpointContent>
@@ -361,11 +345,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/CombatScene.swift"
-            timestampString = "456232115.547442"
+            timestampString = "456264696.396466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "attack()"
             landmarkType = "5">
          </BreakpointContent>
@@ -377,11 +361,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/CombatScene.swift"
-            timestampString = "456232115.547442"
+            timestampString = "456264696.396466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "attack()"
             landmarkType = "5">
          </BreakpointContent>
@@ -393,7 +377,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456234903.829232"
+            timestampString = "456266531.853275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -409,7 +393,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456234903.829232"
+            timestampString = "456266531.853275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
@@ -425,7 +409,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456234903.829232"
+            timestampString = "456266531.853275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "126"
@@ -441,7 +425,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Player.swift"
-            timestampString = "456234903.829232"
+            timestampString = "456266531.853275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
@@ -453,27 +437,27 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sanctuary/Attacks.swift"
-            timestampString = "456232115.547442"
+            timestampString = "456260665.610445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "Attack"
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Sanctuary.Attack.name.setter : Swift.String"
                   moduleName = "Sanctuary"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/urielbertoche/Works/sanctuary-the-game/Sanctuary/Attacks.swift"
-                  timestampString = "456235025.297082"
+                  urlString = "file:///Users/urielbertoche/Projects/Sanctuary/Sanctuary/Attacks.swift"
+                  timestampString = "456253791.575295"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -481,14 +465,14 @@
                   offsetFromSymbolStart = "32">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Sanctuary.Attack.name.materializeForSet : Swift.String"
                   moduleName = "Sanctuary"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/urielbertoche/Works/sanctuary-the-game/Sanctuary/Attacks.swift"
-                  timestampString = "456235025.297239"
+                  urlString = "file:///Users/urielbertoche/Projects/Sanctuary/Sanctuary/Attacks.swift"
+                  timestampString = "456253791.575493"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -496,14 +480,14 @@
                   offsetFromSymbolStart = "21">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "protocol witness for Sanctuary.AttackProtocol.name.getter : Swift.String in conformance Sanctuary.Attack : Sanctuary.AttackProtocol in Sanctuary"
                   moduleName = "Sanctuary"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/urielbertoche/Works/sanctuary-the-game/Sanctuary/Attacks.swift"
-                  timestampString = "456235025.297386"
+                  urlString = "file:///Users/urielbertoche/Projects/Sanctuary/Sanctuary/Attacks.swift"
+                  timestampString = "456253791.575627"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "51"
@@ -511,14 +495,14 @@
                   offsetFromSymbolStart = "9">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "protocol witness for Sanctuary.AttackProtocol.name.setter : Swift.String in conformance Sanctuary.Attack : Sanctuary.AttackProtocol in Sanctuary"
                   moduleName = "Sanctuary"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/urielbertoche/Works/sanctuary-the-game/Sanctuary/Attacks.swift"
-                  timestampString = "456235025.299406"
+                  urlString = "file:///Users/urielbertoche/Projects/Sanctuary/Sanctuary/Attacks.swift"
+                  timestampString = "456253791.5758"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "51"
@@ -526,14 +510,14 @@
                   offsetFromSymbolStart = "20">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "protocol witness for Sanctuary.AttackProtocol.name.materializeForSet : Swift.String in conformance Sanctuary.Attack : Sanctuary.AttackProtocol in Sanctuary"
                   moduleName = "Sanctuary"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/urielbertoche/Works/sanctuary-the-game/Sanctuary/Attacks.swift"
-                  timestampString = "456235025.299575"
+                  urlString = "file:///Users/urielbertoche/Projects/Sanctuary/Sanctuary/Attacks.swift"
+                  timestampString = "456253791.576021"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "51"
@@ -556,6 +540,38 @@
             startingLineNumber = "145"
             endingLineNumber = "145"
             landmarkName = "movement(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sanctuary/MapScene.swift"
+            timestampString = "456266761.961687"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "collide(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sanctuary/MapScene.swift"
+            timestampString = "456266806.563289"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "collide(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

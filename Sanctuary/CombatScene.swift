@@ -11,6 +11,38 @@ import AVFoundation
 
 class CombatScene : SKScene, SKPhysicsContactDelegate {
     var mapScene = MapScene()
+    var overlay = SKNode()
+    var fleeBtn : GGButton?
+    var attackBtn : GGButton?
+    
+    var backgroundMusicPlayer: AVAudioPlayer!
+    
+    func playMusic(filename: String, loop: Bool = false) {
+        let url = NSBundle.mainBundle().URLForResource(
+            filename, withExtension: nil)
+        if (url == nil) {
+            println("Could not find file: \(filename)")
+            return
+        }
+        
+        var error: NSError? = nil
+        backgroundMusicPlayer =
+            AVAudioPlayer(contentsOfURL: url, error: &error)
+        if backgroundMusicPlayer == nil {
+            println("Could not create audio player: \(error!)")
+            return
+        }
+        
+        var numberOfLoops = 0
+        if loop {
+            numberOfLoops = -1
+        }
+        
+        backgroundMusicPlayer.volume = 0.1
+        backgroundMusicPlayer.numberOfLoops = numberOfLoops
+        backgroundMusicPlayer.prepareToPlay()
+        backgroundMusicPlayer.play()
+    }
     
     func drawBattledrop(scenary : Scenary) {
         var image1 = ""
@@ -30,12 +62,14 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
         }
         
         var background = SKSpriteNode(imageNamed: image1)
+        background.zPosition = 0
         background.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         background.size = self.size
         self.addChild(background)
         
         if image2 != "" {
             var foreground = SKSpriteNode(imageNamed: image2)
+            foreground.zPosition = 1
             foreground.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
             foreground.size = self.size
             self.addChild(foreground)
@@ -44,29 +78,68 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
     
     func drawMonster() {
         game.monster!.sprite.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        game.monster!.sprite.zPosition = 2
         self.addChild(game.monster!.sprite)
+    }
+    
+    func drawControllers() {
+        self.overlay.zPosition = 10000
+        //self.overlay.userInteractionEnabled = true
+        //self.userInteractionEnabled = true
+        
+        fleeBtn = GGButton(text: "Flee", color: UIColor.redColor(), size: CGSize(width: self.frame.width / 2, height: 50),
+            buttonAction: self.flee)
+        fleeBtn!.position = CGPointMake(CGRectGetMaxX(self.frame)/4, CGRectGetMinY(self.frame) + 120)
+        fleeBtn!.zPosition = 10001
+        
+        attackBtn = GGButton(text: "Attack", color: UIColor.greenColor(), size: CGSize(width: self.frame.width / 2, height: 50), buttonAction: self.attack)
+        attackBtn!.position = CGPointMake(CGRectGetMaxX(self.frame) - (CGRectGetMaxX(self.frame)/4), CGRectGetMinY(self.frame) + 120)
+        attackBtn!.zPosition = 10002
+        
+        self.overlay.addChild(fleeBtn!)
+        self.overlay.addChild(attackBtn!)
+        
+        self.addChild(overlay)
+        
+        //game.combat_log!.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        //overlay.addChild(game.combat_log!)
     }
     
     override func didMoveToView(view: SKView) {
         game.enterScene(self)
+        playMusic("boss battle 1.mp3", loop: true)
         drawBattledrop(Scenary.Forest)
         drawMonster()
+        drawControllers()
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         for touch : AnyObject in touches {
-            // let transition = SKTransition.revealWithDirection(SKTransitionDirection.Down, duration: 1.0)
-            
-            attack()
+            for touch : AnyObject in touches {
+                var touchLocation = touch.locationInNode(self.overlay)
+                
+                var alt = UIAlertView(title: "Touch", message: "\(touchLocation.x):\(touchLocation.y) \n\(attackBtn!.position.x):\(attackBtn!.position.y)", delegate: nil, cancelButtonTitle: "OK")
+                //alt.show()
+                
+                if attackBtn!.containsPoint(touchLocation) {
+                    attack()
+                }
+                
+                if fleeBtn!.containsPoint(touchLocation) {
+                    flee()
+                }
+            }
         }
     }
     
     func backToWorld() {
         let scene = GameScene(size: self.size)
         scene.scaleMode = SKSceneScaleMode.AspectFill
+        backgroundMusicPlayer.stop()
         
         //self.view!.presentScene(scene, transition: transition)
         game.monster = nil
+        game.combat_log = ""
         self.view!.presentScene(scene)
     }
     
@@ -92,7 +165,7 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
         let exp_reward = game.monster!.exp_reward()
         game.player.levelup(exp_reward)
         
-        let notification = UIAlertView(title: "You won!", message: "Exp rewarded: \(exp_reward)", delegate: nil, cancelButtonTitle: "Back to world")
+        var notification = UIAlertView(title: "You won!", message: "Exp rewarded: \(exp_reward)", delegate: nil, cancelButtonTitle: "Back to world")
         notification.show()
         backToWorld()
     }

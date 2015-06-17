@@ -42,7 +42,8 @@ class Game {
     var player : Player
     var monster : Monster?
     var view : SKView?
-    
+
+    var combat_log = ""
     var current_map = ""
     
     init (player: Player) {
