@@ -34,6 +34,11 @@ class Monster : Actor {
         return killed
     }
     
+    func setHp (value : Int) {
+        self.hp = value
+        self.cur_hp = value
+    }
+    
     static func Spider () -> Monster {
         var monster = Monster(name: "Spider", level:1, sprite: "Spider", attacks: [Attack.Bite])
         let atk_range = 4...8
@@ -60,7 +65,7 @@ class Monster : Actor {
         let def_range = 8...12
         monster.atk = Int.random(atk_range)
         monster.def = Int.random(def_range)
-        monster.hp = Int.random(20...30)
+        monster.setHp(Int.random(20...30))
         
         return monster
     }
@@ -71,7 +76,7 @@ class Monster : Actor {
         let def_range = 24...28
         monster.atk = Int.random(atk_range)
         monster.def = Int.random(def_range)
-        monster.hp = Int.random(50...100)
+        monster.setHp(Int.random(50...100))
         
         return monster
     }
@@ -82,7 +87,7 @@ class Monster : Actor {
         let def_range = 40...45
         monster.atk = Int.random(atk_range)
         monster.def = Int.random(def_range)
-        monster.hp = Int.random(30...60)
+        monster.setHp(Int.random(30...60))
         
         return monster
     }
@@ -93,7 +98,7 @@ class Monster : Actor {
         let def_range = 124...228
         monster.atk = Int.random(atk_range)
         monster.def = Int.random(def_range)
-        monster.hp = Int.random(150...300)
+        monster.setHp(Int.random(150...300))
         
         return monster
     }

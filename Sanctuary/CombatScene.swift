@@ -12,6 +12,7 @@ import AVFoundation
 class CombatScene : SKScene, SKPhysicsContactDelegate {
     var mapScene = MapScene()
     var overlay = SKNode()
+    var infoNode = SKNode()
     var fleeBtn : GGButton?
     var attackBtn : GGButton?
     
@@ -82,8 +83,25 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
         self.addChild(game.monster!.sprite)
     }
     
+    func drawInfos() {
+        infoNode.removeAllChildren()
+        if let monster = game.monster {
+            var monster_title = SKLabelNode(text: "\(monster.name) Lvl\(monster.level)")
+            var monster_hp = SKLabelNode(text: "\(monster.cur_hp) / \(monster.hp)")
+            monster_title.position = CGPointMake(0, 0)
+            monster_hp.position = CGPointMake(0, -40)
+            
+            infoNode.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame))
+            infoNode.addChild(monster_title)
+            infoNode.addChild(monster_hp)
+        } else {
+            return
+        }
+    }
+    
     func drawControllers() {
         self.overlay.zPosition = 10000
+        self.overlay.addChild(infoNode)
         //self.overlay.userInteractionEnabled = true
         //self.userInteractionEnabled = true
         
@@ -111,6 +129,7 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
         drawBattledrop(Scenary.Forest)
         drawMonster()
         drawControllers()
+        drawInfos()
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -158,6 +177,7 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
                 checkLiving()
             }
         }
+        self.drawInfos()
     }
     
     func flee() {

@@ -87,7 +87,6 @@ class Attack : AttackProtocol {
     func animate() {
         if self.sound != "" {
             self.playMusic(self.sound)
-            sleep(1)
         }
     }
     
