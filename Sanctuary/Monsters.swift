@@ -93,7 +93,7 @@ class Monster : Actor {
     }
     
     static func God() -> Monster {
-        var monster = Monster(name: "God", level:15, sprite: "God", attacks: [Attack.Firebolt, Attack.SpearThrust, Attack.SwordAttack])
+        var monster = Monster(name: "God's Ghostly Memory", level:15, sprite: "God", attacks: [Attack.Firebolt, Attack.SpearThrust, Attack.SwordAttack])
         let atk_range = 126...232
         let def_range = 124...228
         monster.atk = Int.random(atk_range)

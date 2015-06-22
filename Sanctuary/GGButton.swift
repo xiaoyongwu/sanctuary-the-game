@@ -20,6 +20,7 @@ class GGButton: SKSpriteNode {
         super.init(texture: nil, color: color, size: size)
         
         self.text.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)-10)
+        self.text.fontName = "AvenirNext-Bold"
         self.addChild(self.text)
         
         //self.userInteractionEnabled = true

@@ -18,12 +18,15 @@ class Player : Actor {
     var lastFacingDirection : Directions = .down
     var showCollisionRect : Bool = false
     
+    var lives : Int
+    
     var movement : PlayerMovement
     var sprite : SKSpriteNode
     
     var attacks = [Attack.SpearThrust, Attack.SwordAttack]
     
-    init (name : String) {
+    init (name : String, lives : Int) {
+        self.lives = lives
         self.exp = 0
         self.freepoints = 0
         
@@ -153,6 +156,9 @@ class Player : Actor {
         
         let current_level = Int(log2(Double(self.exp)))
         if (current_level > self.level) {
+            //var levelUpAlert = UIAlertView(title: "Level UP!\nYou just leveled up from \(self.level) to \(current_level)! Congratulations!\n\n"
+            game.notifications += "You just leveled up from \(self.level) to \(current_level)! Congratulations!\n\n"
+            //levelUpAlert.show()
             self.level++
             self.give_points()
             return true

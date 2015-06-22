@@ -11,7 +11,7 @@ import Foundation
 import SpriteKit
 import Darwin
 
-var game = Game(player : Player(name : "Player 1"))
+var game = Game(player : Player(name : "Aeris", lives : 3))
 
 enum Directions {
     case up
@@ -45,6 +45,7 @@ class Game {
     var view : SKView?
 
     var combat_log = ""
+    var notifications = ""
     var current_map = ""
     
     init (player: Player) {
@@ -73,11 +74,20 @@ class Game {
     }
     
     func gameover() {
-        let scene = GameOver(size: self.current_scene!.size)
-        scene.scaleMode = .ResizeFill
-        scene.size = view!.bounds.size
+        if game.player.lives <= 0 {
+            let scene = GameOver(size: self.current_scene!.size)
+            scene.scaleMode = .ResizeFill
+            scene.size = view!.bounds.size
         
-        view!.presentScene(scene)
+            view!.presentScene(scene)
+        } else {
+            game = Game(player : Player(name : "Aeris", lives : game.player.lives-1))
+            let scene = GameScene(size: self.current_scene!.size)
+            
+            scene.scaleMode = .AspectFill
+            
+            view!.presentScene(scene)
+        }
     }
 }
 

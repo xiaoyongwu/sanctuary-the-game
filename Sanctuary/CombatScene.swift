@@ -86,14 +86,29 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
     func drawInfos() {
         infoNode.removeAllChildren()
         if let monster = game.monster {
-            var monster_title = SKLabelNode(text: "\(monster.name) Lvl\(monster.level)")
+            var monster_title = SKLabelNode(text: "\(monster.name) LVL: \(monster.level)")
             var monster_hp = SKLabelNode(text: "\(monster.cur_hp) / \(monster.hp)")
-            monster_title.position = CGPointMake(0, 0)
-            monster_hp.position = CGPointMake(0, -40)
+            monster_title.position = CGPointMake(88, -60)
+            monster_hp.position = CGPointMake(60, -90)
+            monster_hp.fontName = "AvenirNext-Bold"
+            monster_title.fontName = "AvenirNext-Bold"
+            monster_title.fontSize = 20
+            monster_hp.fontSize = 20
             
-            infoNode.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame))
+            var player_name = SKLabelNode(text: "\(game.player.name) LVL: \(game.player.level)")
+            var player_hp = SKLabelNode(text: "\(game.player.cur_hp) / \(game.player.hp)")
+            player_name.position = CGPointMake(933, -480)
+            player_hp.position = CGPointMake(955, -510)
+            player_hp.fontName = "AvenirNext-Bold"
+            player_hp.fontSize = 20
+            player_name.fontName = "AvenirNext-Bold"
+            player_name.fontSize = 20
+            
+            infoNode.position = CGPointMake(CGRectGetMinX(self.frame), CGRectGetMaxY(self.frame)-100)
             infoNode.addChild(monster_title)
             infoNode.addChild(monster_hp)
+            infoNode.addChild(player_name)
+            infoNode.addChild(player_hp)
         } else {
             return
         }
@@ -125,6 +140,8 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         game.enterScene(self)
+        game.combat_log = ""
+        game.notifications = ""
         playMusic("boss battle 1.mp3", loop: true)
         drawBattledrop(Scenary.Forest)
         drawMonster()
@@ -158,11 +175,13 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
         
         //self.view!.presentScene(scene, transition: transition)
         game.monster = nil
-        game.combat_log = ""
+        var notificationsAlert = UIAlertView(title: "Notifications", message: game.notifications, delegate: nil, cancelButtonTitle: "OK")
+        notificationsAlert.show()
         self.view!.presentScene(scene)
     }
     
     func attack() {
+        game.combat_log = ""
         var ngame = game
         if game.player.spd > game.monster!.spd {
             game.player.attack(game.monster!)
@@ -177,19 +196,22 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
                 checkLiving()
             }
         }
+        var combat_log = UIAlertView(title: "Combat log", message: game.combat_log, delegate: nil, cancelButtonTitle: "OK")
+        combat_log.show()
         self.drawInfos()
     }
     
     func flee() {
+        game.notifications += "You fled...\nA man that flies from his fear may find that he has only taken a short cut to meet it.\n\n"
         backToWorld()
     }
     
     func winBattle() {
         let exp_reward = game.monster!.exp_reward()
+        //var notification = UIAlertView(title: "You won!", message: "Exp rewarded: \(exp_reward)", delegate: nil, cancelButtonTitle: "Back to world")
+        game.notifications += "You won!\nExp rewarded: \(exp_reward)\n\n"
         game.player.levelup(exp_reward)
-        
-        var notification = UIAlertView(title: "You won!", message: "Exp rewarded: \(exp_reward)", delegate: nil, cancelButtonTitle: "Back to world")
-        notification.show()
+        //notification.show()
         backToWorld()
     }
     
