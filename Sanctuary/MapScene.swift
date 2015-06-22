@@ -235,6 +235,14 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         
         // Debug info
         // To add here if needed
+        self.overlay.removeAllChildren()
+        var lives = SKLabelNode(text: "Lives: \(game.player.lives)")
+        lives.fontName = "AvenirNext-Bold"
+        lives.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Right
+        lives.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Bottom
+        lives.position = CGPointMake(CGRectGetMaxX(self.frame) - 30, CGRectGetMaxY(self.frame) - 160)
+        self.overlay.addChild(lives)
+        
         
         // Move player
         game.player.update(self)

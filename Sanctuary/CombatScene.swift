@@ -88,8 +88,10 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
         if let monster = game.monster {
             var monster_title = SKLabelNode(text: "\(monster.name) LVL: \(monster.level)")
             var monster_hp = SKLabelNode(text: "\(monster.cur_hp) / \(monster.hp)")
-            monster_title.position = CGPointMake(88, -60)
-            monster_hp.position = CGPointMake(60, -90)
+            monster_title.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+            monster_hp.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+            monster_title.position = CGPointMake(10, -60)
+            monster_hp.position = CGPointMake(10, -90)
             monster_hp.fontName = "AvenirNext-Bold"
             monster_title.fontName = "AvenirNext-Bold"
             monster_title.fontSize = 20
@@ -97,8 +99,10 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
             
             var player_name = SKLabelNode(text: "\(game.player.name) LVL: \(game.player.level)")
             var player_hp = SKLabelNode(text: "\(game.player.cur_hp) / \(game.player.hp)")
-            player_name.position = CGPointMake(933, -480)
-            player_hp.position = CGPointMake(955, -510)
+            player_name.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Right
+            player_hp.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Right
+            player_name.position = CGPointMake(1000, -480)
+            player_hp.position = CGPointMake(1000, -510)
             player_hp.fontName = "AvenirNext-Bold"
             player_hp.fontSize = 20
             player_name.fontName = "AvenirNext-Bold"
@@ -182,23 +186,35 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
     
     func attack() {
         game.combat_log = ""
+        if game.monster!.isDead() || game.player.isDead() {
+            return
+        }
+        
         var ngame = game
         if game.player.spd > game.monster!.spd {
             game.player.attack(game.monster!)
             if (game.monster!.isDead() == false) {
                 game.monster!.attack(game.player)
-                checkLiving()
+                //checkLiving()
             }
         } else {
             game.monster!.attack(game.player)
             if (game.player.isDead() == false) {
                 game.player.attack(game.monster!)
-                checkLiving()
+                //checkLiving()
             }
         }
-        var combat_log = UIAlertView(title: "Combat log", message: game.combat_log, delegate: nil, cancelButtonTitle: "OK")
+        var combat_log = UIAlertView(title: "Combat log", message: game.combat_log, delegate: self, cancelButtonTitle: "OK")
         combat_log.show()
         self.drawInfos()
+    }
+    
+    func alertView(View: UIAlertView!, clickedButtonAtIndex buttonIndex : Int) {
+        switch buttonIndex {
+            default:
+                checkLiving()
+                break
+        }
     }
     
     func flee() {
@@ -225,12 +241,8 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    func updateView() {
-        checkLiving()
-    }
-    
     override func update(currentTime: NSTimeInterval) {
-        updateView()
+        
     }
     
 }

@@ -28,13 +28,11 @@
 		3655CF6D1B0F6563000BA0F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3655CF6C1B0F6563000BA0F1 /* Images.xcassets */; };
 		3655CF701B0F6563000BA0F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3655CF6E1B0F6563000BA0F1 /* LaunchScreen.xib */; };
 		3655CF7C1B0F6563000BA0F1 /* SanctuaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655CF7B1B0F6563000BA0F1 /* SanctuaryTests.swift */; };
-		3655CF861B0F8199000BA0F1 /* Gamepad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655CF851B0F8199000BA0F1 /* Gamepad.swift */; };
 		36871EA31B16700E000DCC18 /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 36871EA01B16700E000DCC18 /* JSTileMap.m */; };
 		36871EA41B16700E000DCC18 /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 36871EA21B16700E000DCC18 /* LFCGzipUtility.m */; };
 		36871EB31B1670EA000DCC18 /* town.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 36871EB21B1670EA000DCC18 /* town.tmx */; };
 		36CF08E71B20E1A300E0BA09 /* MapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CF08E61B20E1A300E0BA09 /* MapScene.swift */; };
 		36D08EF01B28CA0000EAB550 /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D08EEF1B28CA0000EAB550 /* Zone.swift */; };
-		36D08EF21B2A141500EAB550 /* CombatProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D08EF11B2A141500EAB550 /* CombatProtocol.swift */; };
 		36D08EF41B2A22FB00EAB550 /* Attacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D08EF31B2A22FB00EAB550 /* Attacks.swift */; };
 		36D257561B318C0C0086F4E1 /* 002-Battle02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 36D256711B318C0C0086F4E1 /* 002-Battle02.mp3 */; };
 		36D257571B318C0C0086F4E1 /* Battle 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 36D256721B318C0C0086F4E1 /* Battle 2.mp3 */; };
@@ -93,7 +91,6 @@
 		3655CF751B0F6563000BA0F1 /* SanctuaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SanctuaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3655CF7A1B0F6563000BA0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3655CF7B1B0F6563000BA0F1 /* SanctuaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanctuaryTests.swift; sourceTree = "<group>"; };
-		3655CF851B0F8199000BA0F1 /* Gamepad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gamepad.swift; sourceTree = "<group>"; };
 		36871E9F1B16700E000DCC18 /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSTileMap.h; path = APIs/JSTileMap.h; sourceTree = "<group>"; };
 		36871EA01B16700E000DCC18 /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSTileMap.m; path = APIs/JSTileMap.m; sourceTree = "<group>"; };
 		36871EA11B16700E000DCC18 /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LFCGzipUtility.h; path = APIs/LFCGzipUtility.h; sourceTree = "<group>"; };
@@ -101,7 +98,6 @@
 		36871EB21B1670EA000DCC18 /* town.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = town.tmx; path = Maps/town.tmx; sourceTree = "<group>"; };
 		36CF08E61B20E1A300E0BA09 /* MapScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScene.swift; sourceTree = "<group>"; };
 		36D08EEF1B28CA0000EAB550 /* Zone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
-		36D08EF11B2A141500EAB550 /* CombatProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatProtocol.swift; sourceTree = "<group>"; };
 		36D08EF31B2A22FB00EAB550 /* Attacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attacks.swift; sourceTree = "<group>"; };
 		36D256711B318C0C0086F4E1 /* 002-Battle02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "002-Battle02.mp3"; sourceTree = "<group>"; };
 		36D256721B318C0C0086F4E1 /* Battle 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Battle 2.mp3"; sourceTree = "<group>"; };
@@ -183,12 +179,10 @@
 		365100F21B16251A00A165E3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3655CF851B0F8199000BA0F1 /* Gamepad.swift */,
 				3608767B1B124CBD001529F9 /* Game.swift */,
 				365100F01B16250B00A165E3 /* Player.swift */,
 				365100F51B1625F300A165E3 /* Monsters.swift */,
 				36D08EEF1B28CA0000EAB550 /* Zone.swift */,
-				36D08EF11B2A141500EAB550 /* CombatProtocol.swift */,
 				36D08EF31B2A22FB00EAB550 /* Attacks.swift */,
 			);
 			name = Models;
@@ -458,11 +452,9 @@
 				365100F11B16250B00A165E3 /* Player.swift in Sources */,
 				3655CF661B0F6563000BA0F1 /* GameScene.swift in Sources */,
 				3608767C1B124CBD001529F9 /* Game.swift in Sources */,
-				36D08EF21B2A141500EAB550 /* CombatProtocol.swift in Sources */,
 				3655CF681B0F6563000BA0F1 /* GameViewController.swift in Sources */,
 				36D62BE31B126706006060A4 /* GameOver.swift in Sources */,
 				3655CF621B0F6563000BA0F1 /* AppDelegate.swift in Sources */,
-				3655CF861B0F8199000BA0F1 /* Gamepad.swift in Sources */,
 				365100F61B1625F300A165E3 /* Monsters.swift in Sources */,
 				362AC0C21B14E0FC002B9690 /* player_movement.swift in Sources */,
 				36871EA31B16700E000DCC18 /* JSTileMap.m in Sources */,
