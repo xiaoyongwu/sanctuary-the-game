@@ -82,8 +82,8 @@
  <objectgroup name="zones">
   <object id="10" name="mob_area_1" type="mob_area" x="4" y="4" width="831" height="733">
    <properties>
-    <property name="encounter_rate" value="10"/>
-    <property name="mob_gid" value="5"/>
+    <property name="encounter_rate" value="1"/>
+    <property name="mob_gid" value="1"/>
    </properties>
   </object>
   <object id="15" x="843" y="9" width="726" height="943">
