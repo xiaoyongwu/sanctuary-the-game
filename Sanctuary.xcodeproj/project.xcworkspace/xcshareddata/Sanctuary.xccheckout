@@ -11,7 +11,7 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>D63046A9866516875327F9B4F2003DF2AE694BD3</key>
-		<string>https://github.com/urielb/sanctuary-the-game.git</string>
+		<string>https://github.com/xiaoyongwu/sanctuary-the-game.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Sanctuary.xcodeproj/project.xcworkspace</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/urielb/sanctuary-the-game.git</string>
+	<string>https://github.com/xiaoyongwu/sanctuary-the-game.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

@@ -15,7 +15,7 @@ class GameScene: MapScene {
         self.mapName = "town.tmx"
         playMusic("Opening 4.mp3", loop: true)
         
-        var mobGroups = [
+        let mobGroups = [
             1: MonstersGroup(monsters: [Monster.Spider, Monster.Bandit]),
             2: MonstersGroup(monsters: [Monster.Spider, Monster.Bandit, Monster.Bat]),
             3: MonstersGroup(monsters: [Monster.Bat, Monster.Demon, Monster.Ghost]),

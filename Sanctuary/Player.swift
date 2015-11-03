@@ -40,7 +40,7 @@ class Player : Actor {
         // Calculate smaller rectangle
         let spriteFrame = self.sprite.frame
         var collisionRect = CGRectInset(spriteFrame, 4, 2)
-        var movement = CGPointMake(self.targetPosition.x - self.position.x, self.targetPosition.y - self.position.y)
+        let movement = CGPointMake(self.targetPosition.x - self.position.x, self.targetPosition.y - self.position.y)
         
         // Move rectangle to target position
         collisionRect = CGRectOffset(collisionRect, movement.x, movement.y - 2)
@@ -70,7 +70,7 @@ class Player : Actor {
     func update(scene : MapScene) {
         if showCollisionRect {
             self.sprite.removeAllChildren()
-            var box = SKShapeNode()
+            let box = SKShapeNode()
             box.path = CGPathCreateWithRect(self.collisionRectAtTarget(), nil)
             box.strokeColor = SKColor.redColor()
             box.lineWidth = 0.1
@@ -176,8 +176,8 @@ class Player : Actor {
     }
     
     func attack(target : Actor) -> Bool {
-        var attack = self.attacks[Int.random(0...attacks.count-1)]()
-        var killed = attack.perform(target, attacker: self)
+        let attack = self.attacks[Int.random(0...attacks.count-1)]()
+        let killed = attack.perform(target, attacker: self)
         
         return killed
     }

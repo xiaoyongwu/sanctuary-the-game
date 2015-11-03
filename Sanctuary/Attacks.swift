@@ -30,15 +30,20 @@ class Attack : AttackProtocol {
         let url = NSBundle.mainBundle().URLForResource(
             filename, withExtension: nil)
         if (url == nil) {
-            println("Could not find file: \(filename)")
+            print("Could not find file: \(filename)")
             return
         }
         
         var error: NSError? = nil
-        soundEffects =
-            AVAudioPlayer(contentsOfURL: url, error: &error)
+        do {
+            soundEffects =
+                try AVAudioPlayer(contentsOfURL: url!)
+        } catch let error1 as NSError {
+            error = error1
+            soundEffects = nil
+        }
         if soundEffects == nil {
-            println("Could not create audio player: \(error!)")
+            print("Could not create audio player: \(error!)")
             return
         }
         
@@ -98,27 +103,27 @@ class Attack : AttackProtocol {
     
     // List of attacks
     static func Bite() -> Attack {
-        var attack = Attack(name: "Bite", sound: "Bite.wav", power: 60)
+        let attack = Attack(name: "Bite", sound: "Bite.wav", power: 60)
         return attack
     }
     
     static func SwordAttack() -> Attack {
-        var attack = Attack(name: "Sword Attack", sound: "Sword3.wav", power: 50)
+        let attack = Attack(name: "Sword Attack", sound: "Sword3.wav", power: 50)
         return attack
     }
     
     static func SpearThrust() -> Attack {
-        var attack = Attack(name: "Spear Thrust", sound: "Wind7.wav", power: 100)
+        let attack = Attack(name: "Spear Thrust", sound: "Wind7.wav", power: 100)
         return attack
     }
     
     static func LifeSteal() -> Attack {
-        var attack = Attack(name: "Life Steal", sound: "Decision2.wav", power: 30)
+        let attack = Attack(name: "Life Steal", sound: "Decision2.wav", power: 30)
         return attack
     }
     
     static func Firebolt() -> Attack {
-        var attack = Attack(name: "Firebolt", sound: "", power: 50)
+        let attack = Attack(name: "Firebolt", sound: "", power: 50)
         return attack
     }
     

@@ -22,15 +22,20 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
         let url = NSBundle.mainBundle().URLForResource(
             filename, withExtension: nil)
         if (url == nil) {
-            println("Could not find file: \(filename)")
+            print("Could not find file: \(filename)")
             return
         }
         
         var error: NSError? = nil
-        backgroundMusicPlayer =
-            AVAudioPlayer(contentsOfURL: url, error: &error)
+        do {
+            backgroundMusicPlayer =
+                try AVAudioPlayer(contentsOfURL: url!)
+        } catch let error1 as NSError {
+            error = error1
+            backgroundMusicPlayer = nil
+        }
         if backgroundMusicPlayer == nil {
-            println("Could not create audio player: \(error!)")
+            print("Could not create audio player: \(error!)")
             return
         }
         
@@ -62,14 +67,14 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
                 image1 = "Grassland"
         }
         
-        var background = SKSpriteNode(imageNamed: image1)
+        let background = SKSpriteNode(imageNamed: image1)
         background.zPosition = 0
         background.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         background.size = self.size
         self.addChild(background)
         
         if image2 != "" {
-            var foreground = SKSpriteNode(imageNamed: image2)
+            let foreground = SKSpriteNode(imageNamed: image2)
             foreground.zPosition = 1
             foreground.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
             foreground.size = self.size
@@ -86,8 +91,8 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
     func drawInfos() {
         infoNode.removeAllChildren()
         if let monster = game.monster {
-            var monster_title = SKLabelNode(text: "\(monster.name) LVL: \(monster.level)")
-            var monster_hp = SKLabelNode(text: "\(monster.cur_hp) / \(monster.hp)")
+            let monster_title = SKLabelNode(text: "\(monster.name) LVL: \(monster.level)")
+            let monster_hp = SKLabelNode(text: "\(monster.cur_hp) / \(monster.hp)")
             monster_title.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
             monster_hp.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
             monster_title.position = CGPointMake(10, -60)
@@ -97,8 +102,8 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
             monster_title.fontSize = 20
             monster_hp.fontSize = 20
             
-            var player_name = SKLabelNode(text: "\(game.player.name) LVL: \(game.player.level)")
-            var player_hp = SKLabelNode(text: "\(game.player.cur_hp) / \(game.player.hp)")
+            let player_name = SKLabelNode(text: "\(game.player.name) LVL: \(game.player.level)")
+            let player_hp = SKLabelNode(text: "\(game.player.cur_hp) / \(game.player.hp)")
             player_name.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Right
             player_hp.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Right
             player_name.position = CGPointMake(1000, -480)
@@ -153,10 +158,10 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
         drawInfos()
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch : AnyObject in touches {
             for touch : AnyObject in touches {
-                var touchLocation = touch.locationInNode(self.overlay)
+                let touchLocation = touch.locationInNode(self.overlay)
                 
                 var alt = UIAlertView(title: "Touch", message: "\(touchLocation.x):\(touchLocation.y) \n\(attackBtn!.position.x):\(attackBtn!.position.y)", delegate: nil, cancelButtonTitle: "OK")
                 //alt.show()
@@ -179,7 +184,7 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
         
         //self.view!.presentScene(scene, transition: transition)
         game.monster = nil
-        var notificationsAlert = UIAlertView(title: "Notifications", message: game.notifications, delegate: nil, cancelButtonTitle: "OK")
+        let notificationsAlert = UIAlertView(title: "Notifications", message: game.notifications, delegate: nil, cancelButtonTitle: "OK")
         notificationsAlert.show()
         self.view!.presentScene(scene)
     }
@@ -204,7 +209,7 @@ class CombatScene : SKScene, SKPhysicsContactDelegate {
                 //checkLiving()
             }
         }
-        var combat_log = UIAlertView(title: "Combat log", message: game.combat_log, delegate: self, cancelButtonTitle: "OK")
+        let combat_log = UIAlertView(title: "Combat log", message: game.combat_log, delegate: self, cancelButtonTitle: "OK")
         combat_log.show()
         self.drawInfos()
     }

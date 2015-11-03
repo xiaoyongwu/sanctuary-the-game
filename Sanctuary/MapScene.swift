@@ -15,7 +15,7 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
     var mapName = ""
     var map:JSTileMap! //= JSTileMap(named: "town.tmx")
     var tileSize:CGSize!
-    var camera = SKNode()
+    var mycamera = SKNode()
     var overlay = SKNode()
     var zones = [Zone]()
     var mobGroups = [Int: MonstersGroup]()
@@ -26,15 +26,20 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         let url = NSBundle.mainBundle().URLForResource(
             filename, withExtension: nil)
         if (url == nil) {
-            println("Could not find file: \(filename)")
+            print("Could not find file: \(filename)")
             return
         }
         
         var error: NSError? = nil
-        backgroundMusicPlayer =
-            AVAudioPlayer(contentsOfURL: url, error: &error)
+        do {
+            backgroundMusicPlayer =
+                try AVAudioPlayer(contentsOfURL: url!)
+        } catch let error1 as NSError {
+            error = error1
+            backgroundMusicPlayer = nil
+        }
         if backgroundMusicPlayer == nil {
-            println("Could not create audio player: \(error!)")
+            print("Could not create audio player: \(error!)")
             return
         }
         
@@ -71,15 +76,15 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func rectForTileCoord(coord: CGPoint) -> CGRect {
-        var x = coord.x * self.map.tileSize.width
-        var mapHeight = self.map.mapSize.height * self.map.tileSize.height
-        var y = mapHeight - ((coord.y + 1) * self.map.tileSize.height)
+        let x = coord.x * self.map.tileSize.width
+        let mapHeight = self.map.mapSize.height * self.map.tileSize.height
+        let y = mapHeight - ((coord.y + 1) * self.map.tileSize.height)
         
         return CGRectMake(x, y, self.map.tileSize.width, self.map.tileSize.height);
     }
     
     func collide(layer : TMXLayer) {
-        var coordOffsets = [
+        let coordOffsets = [
             CGPointMake(0,1),
             CGPointMake(0,-1),
             CGPointMake(1,0),
@@ -90,7 +95,7 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
             CGPointMake(-1,1)
         ]
         
-        var playerCoord = layer.coordForPoint(game.player.targetPosition)
+        let playerCoord = layer.coordForPoint(game.player.targetPosition)
         
         // loop through tiles around player
         for tile : CGPoint in coordOffsets {
@@ -104,7 +109,7 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
             
             if gid != 0 {
                 // Get intersection between player rect and tile
-                var intersection = CGRectIntersection(playerRect, self.rectForTileCoord(tileCoord))
+                let intersection = CGRectIntersection(playerRect, self.rectForTileCoord(tileCoord))
                 
                 if !CGRectIsNull(intersection) {
                     // Do we move the player horizontally or vertically?
@@ -132,18 +137,18 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func checkEncounter() -> Monster? {
-        var zone = self.getPlayerInZone()
+        let zone = self.getPlayerInZone()
         if zone == nil {
             return nil
         }
         
         if let mob_gid = zone!.mob_gid as? Int {
             if mob_gid != 0 {
-                var monsterGroup = mobGroups[mob_gid]
+                let monsterGroup = mobGroups[mob_gid]
                 let battle_monster = Int.random(0...game.encounter_base)
                 let encounter_rate = zone!.encounter_rate
                 if(battle_monster <= encounter_rate){
-                    var monster = monsterGroup?.getRandomMonster()
+                    let monster = monsterGroup?.getRandomMonster()
                     return monster
                 }
             }
@@ -168,15 +173,15 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
                 if let zone = object as? NSDictionary {
                     let x = zone.valueForKey("x") as! CGFloat
                     let y = zone.valueForKey("y") as! CGFloat
-                    var w = zone.valueForKey("width") as! NSString
-                    var h = zone.valueForKey("height") as! NSString
-                    var width = w.floatValue
-                    var height = h.floatValue
+                    let w = zone.valueForKey("width") as! NSString
+                    let h = zone.valueForKey("height") as! NSString
+                    let width = w.floatValue
+                    let height = h.floatValue
                     let name = zone.valueForKey("name") as! String
                     let mid = zone.valueForKey("mob_gid") as! NSString
                     let mob_gid = mid.integerValue
-                    var rect = CGRectMake(x, y, CGFloat(width), CGFloat(height))
-                    var er = zone.valueForKey("encounter_rate") as? NSString
+                    let rect = CGRectMake(x, y, CGFloat(width), CGFloat(height))
+                    let er = zone.valueForKey("encounter_rate") as? NSString
                     var encounter_rate = 1
                     if er != nil {
                         encounter_rate = er!.integerValue
@@ -215,8 +220,8 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(overlay)
         
         // Set up camera
-        self.camera.position = CGPointMake(size.width * 0.5, size.height * 0.5)
-        self.map.addChild(camera)
+        self.mycamera.position = CGPointMake(size.width * 0.5, size.height * 0.5)
+        self.map.addChild(mycamera)
         
         // Set up player
         let mapStartPoint = getMarkerPosition("startpoint")
@@ -228,15 +233,15 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
     func updateView() {
         
         // Calculate clamped x and y locations
-        var x = fmax(self.camera.position.x, self.size.width * 0.5)
-        var y = fmax(self.camera.position.y, self.size.height * 0.38)
+        var x = fmax(self.mycamera.position.x, self.size.width * 0.5)
+        var y = fmax(self.mycamera.position.y, self.size.height * 0.38)
         x = fmin(x, (self.map.mapSize.width * self.map.tileSize.width) - (self.size.width * 0.5))
         y = fmin(y, (self.map.mapSize.height * self.map.tileSize.height) - (self.size.height * 0.38))
         
         // Debug info
         // To add here if needed
         self.overlay.removeAllChildren()
-        var lives = SKLabelNode(text: "Lives: \(game.player.lives)")
+        let lives = SKLabelNode(text: "Lives: \(game.player.lives)")
         lives.fontName = "AvenirNext-Bold"
         lives.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Right
         lives.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Bottom
@@ -268,16 +273,16 @@ class MapScene: SKScene, SKPhysicsContactDelegate {
                                             (self.size.height * 0.5) - y)
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch : AnyObject in touches {
-            var touchLocation = touch.locationInNode(self.map)
+            let touchLocation = touch.locationInNode(self.map)
             game.player.targetLocation = touchLocation
         }
         
     }
     
     override func update(currentTime: CFTimeInterval) {
-        self.camera.position = CGPointMake(game.player.position.x, game.player.position.y)
+        self.mycamera.position = CGPointMake(game.player.position.x, game.player.position.y)
         
         /* Called before each frame is rendered */
         self.overlay.removeAllChildren()

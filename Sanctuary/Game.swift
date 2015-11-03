@@ -56,7 +56,7 @@ class Game {
         self.current_scene = scene
         self.view = scene.view!
         if scene.isKindOfClass(MapScene.self) {
-            var mapScene = scene as! MapScene
+            let mapScene = scene as! MapScene
             self.current_map = mapScene.mapName
         }
     }
@@ -87,7 +87,7 @@ class Game {
             scene.scaleMode = .AspectFill
             view!.presentScene(scene)
             
-            var deathAlert = UIAlertView(title: "You died", message: "You wasn't strong enough to reach your goals. Luckly the amulet your master gave you allow you to go back in time to where it all started. However it's magic is weavering and it will only work again \(game.player.lives-1) times. Be careful", delegate: nil, cancelButtonTitle: "I will")
+            let deathAlert = UIAlertView(title: "You died", message: "You wasn't strong enough to reach your goals. Luckly the amulet your master gave you allow you to go back in time to where it all started. However it's magic is weavering and it will only work again \(game.player.lives-1) times. Be careful", delegate: nil, cancelButtonTitle: "I will")
             deathAlert.show()
         }
     }
